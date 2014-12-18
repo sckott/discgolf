@@ -1,0 +1,64 @@
+discgolf
+=======
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  warning = FALSE, 
+  message = FALSE
+)
+```
+
+`discgolf` is an R client for the Discourse API, based off the Ruby gem [discourse_api](https://github.com/discourse/discourse_api)
+
+## Installation
+
+```{r eval=FALSE}
+install.packages("devtools")
+devtools::install_github("sckott/discgolf")
+```
+
+```{r}
+library("discgolf")
+```
+
+## Authentication
+
+The Discourse API is based on using a specific installation of Discourse, which requires your username and an API key for that installation. Get those, and you can pass them in to each function call, or set as option variables in `.Rprofile` (use `discourse_api_key` and `discourse_username`) or environment variables in `.Renviron` (use `DISCOURSE_API_KEY` and `DISCOURSE_USERNAME`).
+
+## Functions
+
+Only functions for GETting topics are included as of 2014-12-18
+
+Get latest topics
+
+```{r eval=FALSE}
+latest_topics()
+```
+
+```{r echo=FALSE}
+latest_topics()$topic_list$topics[,c(1:5)]
+```
+
+Get new topics
+
+```{r}
+new_topics()
+```
+
+Get topics by a specific user
+
+```{r}
+topics_by("cboettig")
+```
+
+Get a single topic by id number
+
+```{r eval=FALSE}
+topic(8)
+```
+
+```{r echo=FALSE}
+topic(8)$post_stream$posts[,c(1:5)]
+```
