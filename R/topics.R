@@ -1,5 +1,6 @@
 #' Get the latest topics
 #'
+#' @import httr jsonlite
 #' @export
 #' @param url Base url for a Discourse installation. Default is \url{http://discuss.ropensci.org}
 #' @param key Your api key on the Discourse installation
