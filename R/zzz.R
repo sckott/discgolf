@@ -1,8 +1,8 @@
 dc <- function(x) Filter(Negate(is.null), x)
 
-disc_GET <- function(url, args = list(), ...)
+disc_GET <- function(url, endpt, args = list(), ...)
 {
-  url <- file.path(url, "latest.json")
+  url <- file.path(url, endpt)
   headers <- add_headers(Accept='application/json', user_agent="discgolf R client")
   res <- GET(url, query = args, headers, ...)
   stop_for_status(res)
