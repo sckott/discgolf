@@ -56,7 +56,8 @@ latest_topics(config=verbose())
 
 # Create topic
 ## simple
-create_topic(title="testing from discgolf - 1", text="testing from discgolf, hello world! hopefully this works")
+create_topic(title="testing from discgolf - 1", text="testing from discgolf, hello world!
+hopefully this works")
 
 ## more complicated
 text <- '
