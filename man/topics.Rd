@@ -7,7 +7,7 @@
 \alias{topic}
 \alias{topics}
 \alias{topics_by}
-\title{Get the latest topics}
+\title{Work with topics}
 \usage{
 latest_topics(url = "http://discuss.ropensci.org", key = NULL,
   user = NULL, ...)
@@ -42,7 +42,7 @@ create_topic(title, text, category = NULL,
 \item{category}{Category to apply to topic, if any, Default: none}
 }
 \description{
-Get the latest topics
+Work with topics
 }
 \examples{
 \dontrun{

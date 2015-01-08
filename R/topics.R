@@ -1,4 +1,4 @@
-#' Get the latest topics
+#' Work with topics
 #'
 #' @import httr jsonlite
 #' @name topics
