@@ -4,6 +4,7 @@ discgolf
 
 
 [![Build Status](https://travis-ci.org/sckott/discgolf.svg)](https://travis-ci.org/sckott/discgolf)
+[![codecov.io](https://codecov.io/github/sckott/discgolf/coverage.svg?branch=master)](https://codecov.io/github/sckott/discgolf?branch=master)
 
 `discgolf` is an R client for the Discourse API, based off the Ruby gem [discourse_api](https://github.com/discourse/discourse_api)
 
