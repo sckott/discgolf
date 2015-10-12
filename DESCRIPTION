@@ -1,8 +1,8 @@
 Package: discgolf
 Title: R Client for the Discourse API
 Description: R client for the Discourse API.
-Version: 0.0.2.99
-Date: 2015-01-08
+Version: 0.0.3.9000
+Date: 2015-10-12
 License: MIT + file LICENSE
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"), email =
     "myrmecocystus@gmail.com")

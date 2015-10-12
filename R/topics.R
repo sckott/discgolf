@@ -1,6 +1,5 @@
 #' Work with topics
 #'
-#' @import httr jsonlite
 #' @name topics
 #' @param url Base url for a Discourse installation. Default is \url{http://discuss.ropensci.org}
 #' @param id A user identifier, or a topic identifier. See examples.
