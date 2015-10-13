@@ -27,13 +27,14 @@ topic_delete(id, url = NULL, key = NULL, user = NULL, ...)
 topic_rename(id, title, url = NULL, key = NULL, user = NULL, ...)
 }
 \arguments{
-\item{url}{Base url for a Discourse installation. See Details.}
+\item{url}{Base url for a Discourse installation. See \code{\link{disc_setup}}}
 
-\item{key}{Your api key on the Discourse installation. See Details.}
+\item{key}{Your api key on the Discourse installation. See \code{\link{disc_setup}}}
 
-\item{user}{Your user name on the Discourse installation. See Details.}
+\item{user}{Your user name on the Discourse installation. See \code{\link{disc_setup}}}
 
-\item{...}{Named parameters passed on to \code{\link[httr]{GET}}}
+\item{...}{Named parameters passed on to \code{\link[httr]{GET}},
+\code{\link[httr]{POST}}, \code{\link[httr]{PUT}}, or \code{\link[httr]{DELETE}}}
 
 \item{id}{A user identifier, or a topic identifier. See examples.}
 

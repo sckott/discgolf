@@ -1,14 +1,11 @@
 #' Work with topics
 #'
 #' @name topics
-#' @param url Base url for a Discourse installation. See Details.
 #' @param id A user identifier, or a topic identifier. See examples.
-#' @param key Your api key on the Discourse installation. See Details.
-#' @param user Your user name on the Discourse installation. See Details.
 #' @param title Title of the new topic
 #' @param text Raw text, can include markdown and will be rendered.
 #' @param category Category to apply to topic, if any, Default: none
-#' @param ... Named parameters passed on to \code{\link[httr]{GET}}
+#' @template args
 #' @examples \dontrun{
 #' topics_latest()
 #' topics_new()

@@ -8,24 +8,29 @@
 \alias{posts}
 \title{Work with posts}
 \usage{
-post_get(postid, url = NULL, key = NULL, user = NULL, ...)
+post_get(post_id, url = NULL, key = NULL, user = NULL, ...)
 
 post_create(topic_id, text, url = NULL, key = NULL, user = NULL, ...)
 
-post_edit(id, text, url = NULL, key = NULL, user = NULL, ...)
+post_edit(post_id, text, url = NULL, key = NULL, user = NULL, ...)
 
-post_wikify(id, url = NULL, key = NULL, user = NULL, ...)
+post_wikify(post_id, url = NULL, key = NULL, user = NULL, ...)
 }
 \arguments{
-\item{postid}{A post id}
+\item{post_id}{A post id}
 
-\item{url}{Base url for a Discourse installation. Default is \url{http://discuss.ropensci.org}}
+\item{url}{Base url for a Discourse installation. See \code{\link{disc_setup}}}
 
-\item{key}{Your api key on the Discourse installation}
+\item{key}{Your api key on the Discourse installation. See \code{\link{disc_setup}}}
 
-\item{user}{Your user name on the Discourse installation}
+\item{user}{Your user name on the Discourse installation. See \code{\link{disc_setup}}}
 
-\item{...}{Named parameters passed on to \code{\link[httr]{GET}}}
+\item{...}{Named parameters passed on to \code{\link[httr]{GET}},
+\code{\link[httr]{POST}}, \code{\link[httr]{PUT}}, or \code{\link[httr]{DELETE}}}
+
+\item{topic_id}{A topic id}
+
+\item{text}{Text to put in post}
 }
 \description{
 Work with posts

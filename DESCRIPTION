@@ -1,7 +1,7 @@
 Package: discgolf
 Title: R Client for the Discourse API
 Description: R client for the Discourse API.
-Version: 0.0.3.9000
+Version: 0.0.4.9000
 Date: 2015-10-12
 License: MIT + file LICENSE
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"), email =
@@ -11,7 +11,8 @@ BugReports: https://github.com/sckott/discgolf/issues
 LazyData: true
 Imports:
     httr (>= 0.6.0),
-    jsonlite
+    jsonlite,
+    xml2
 Suggests:
     testthat
 

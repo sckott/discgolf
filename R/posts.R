@@ -1,11 +1,10 @@
 #' Work with posts
 #'
 #' @name posts
-#' @param postid A post id
-#' @param url Base url for a Discourse installation. Default is \url{http://discuss.ropensci.org}
-#' @param key Your api key on the Discourse installation
-#' @param user Your user name on the Discourse installation
-#' @param ... Named parameters passed on to \code{\link[httr]{GET}}
+#' @param post_id A post id
+#' @param topic_id A topic id
+#' @param text Text to put in post
+#' @template args
 #' @examples \dontrun{
 #' # get a post
 #' post_get(90)
@@ -31,9 +30,9 @@
 
 #' @export
 #' @rdname posts
-post_get <- function(postid, url = NULL, key = NULL, user = NULL, ...) {
+post_get <- function(post_id, url = NULL, key = NULL, user = NULL, ...) {
   args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_GET(check_url(url), sprintf("posts/%s.json", postid), args, ...)
+  disc_GET(check_url(url), sprintf("posts/%s.json", post_id), args, ...)
 }
 
 #' @export
@@ -46,17 +45,17 @@ post_create <- function(topic_id, text, url=NULL, key=NULL, user=NULL, ...){
 
 #' @export
 #' @rdname posts
-post_edit <- function(id, text, url=NULL, key=NULL, user=NULL, ...){
+post_edit <- function(post_id, text, url=NULL, key=NULL, user=NULL, ...){
   message("blarg, doesn't work yet")
   # args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  # disc_PUT(check_url(url), paste0("posts/%s", id), args,
+  # disc_PUT(check_url(url), paste0("posts/%s", post_id), args,
   #          body = list(raw = text), ...)
 }
 
 #' @export
 #' @rdname posts
-post_wikify <- function(id, url=NULL, key=NULL, user=NULL, ...){
+post_wikify <- function(post_id, url=NULL, key=NULL, user=NULL, ...){
   args <- dc(list(api_key = check_key(key), api_username = check_user(user),
                   wiki = "true"))
-  disc_PUT(check_url(url), sprintf("posts/%s/wiki", id), args, ...)
+  disc_PUT(check_url(url), sprintf("posts/%s/wiki", post_id), args, ...)
 }
