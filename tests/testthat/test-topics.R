@@ -1,19 +1,19 @@
-# tests for droplet
-context("droplet")
+context("topics")
 
 test_that("fails well with no input", {
-  expect_error(droplet(), "argument \"id\" is missing")
+  expect_error(topic(), "argument \"id\" is missing")
 })
 
 test_that("fails well with non-existent droplet", {
 	skip_on_cran()
 
-  expect_error(droplet("bearbearbear"), "The resource you were accessing could not be found")
+  expect_error(topic("bearbearbear"),
+               "The page you requested doesn't exist or is private")
 })
 
 test_that("httr curl options work", {
 	skip_on_cran()
 
   library("httr")
-  expect_error(droplet("asdfadf", config = timeout(seconds = 0.001)))
+  expect_error(topic("asdfadf", config = timeout(seconds = 0.001)))
 })

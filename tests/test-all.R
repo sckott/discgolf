@@ -1,2 +1,2 @@
-library(testthat)
-test_check("analogsea")
+library("testthat")
+test_check("discgolf")
