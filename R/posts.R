@@ -7,11 +7,11 @@
 #' @param user Your user name on the Discourse installation
 #' @param ... Named parameters passed on to \code{\link[httr]{GET}}
 #' @examples \dontrun{
-#' get_post(90)
-#' get_post(120)
-#' get_post(130)
-#' get_post(155)
-#' cat(get_post(155)$raw)
+#' post_get(90)
+#' post_get(120)
+#' post_get(130)
+#' post_get(155)
+#' cat(post_get(155)$raw)
 #' }
 
 # #' @rdname posts
@@ -22,9 +22,9 @@
 
 #' @export
 #' @rdname posts
-get_post <- function(postid, url="http://discuss.ropensci.org", key=NULL, user=NULL, ...){
-  args <- dc(list(api_key=check_key(key), api_username=check_user(user)))
-  disc_GET(url, sprintf("posts/%s.json", postid), args, ...)
+post_get <- function(postid, url = NULL, key = NULL, user = NULL, ...) {
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+  disc_GET(check_url(url), sprintf("posts/%s.json", postid), args, ...)
 }
 
 # #' @rdname posts

@@ -1,26 +1,26 @@
 #' Work with topics
 #'
 #' @name topics
-#' @param url Base url for a Discourse installation. Default is \url{http://discuss.ropensci.org}
+#' @param url Base url for a Discourse installation. See Details.
 #' @param id A user identifier, or a topic identifier. See examples.
-#' @param key Your api key on the Discourse installation
-#' @param user Your user name on the Discourse installation
+#' @param key Your api key on the Discourse installation. See Details.
+#' @param user Your user name on the Discourse installation. See Details.
 #' @param title Title of the new topic
 #' @param text Raw text, can include markdown and will be rendered.
 #' @param category Category to apply to topic, if any, Default: none
 #' @param ... Named parameters passed on to \code{\link[httr]{GET}}
 #' @examples \dontrun{
-#' latest_topics()
-#' new_topics()
+#' topics_latest()
+#' topics_new()
 #' topics_by("cboettig")
 #' topic(8)
 #'
 #' library("httr")
-#' latest_topics(config=verbose())
+#' topics_latest(config=verbose())
 #'
 #' # Create topic
 #' ## simple
-#' create_topic(title="testing from discgolf - 1", text="testing from discgolf, hello world!
+#' topic_create(title="testing from discgolf - 1", text="testing from discgolf, hello world!
 #' hopefully this works")
 #'
 #' ## more complicated
@@ -43,41 +43,53 @@
 #' #> Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 #' ```
 #' '
-#' create_topic(title="testing from discgolf - 2", text=text)
+#' topic_create(title="testing from discgolf - 2", text=text)
+#'
+#' # delete a topic
+#' topic_delete(242)
 #' }
 
 #' @export
 #' @rdname topics
-latest_topics <- function(url="http://discuss.ropensci.org", key=NULL, user=NULL, ...){
-  args <- dc(list(api_key=check_key(key), api_username=check_user(user)))
-  disc_GET(url, "latest.json", args, ...)
+topics_latest <- function(url = NULL, key = NULL, user = NULL, ...){
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+  disc_GET(check_url(url), "latest.json", args, ...)
 }
 
 #' @export
 #' @rdname topics
-new_topics <- function(url="http://discuss.ropensci.org", key=NULL, user=NULL, ...){
-  args <- dc(list(api_key=check_key(key), api_username=check_user(user)))
-  disc_GET(url, "new.json", args, ...)
+topics_new <- function(url = NULL, key = NULL, user = NULL, ...){
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+  disc_GET(check_url(url), "new.json", args, ...)
 }
 
 #' @export
 #' @rdname topics
-topics_by <- function(id, url="http://discuss.ropensci.org", key=NULL, user=NULL, ...){
-  args <- dc(list(api_key=check_key(key), api_username=check_user(user)))
-  disc_GET(url, sprintf("topics/created-by/%s.json", id), args, ...)
+topics_by <- function(id, url = NULL, key = NULL, user = NULL, ...){
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+  disc_GET(check_url(url), sprintf("topics/created-by/%s.json", id), args, ...)
 }
 
 #' @export
 #' @rdname topics
-topic <- function(id, url="http://discuss.ropensci.org", key=NULL, user=NULL, ...){
-  args <- dc(list(api_key=check_key(key), api_username=check_user(user)))
-  disc_GET(url, sprintf("t/%s.json", id), args, ...)
+topic <- function(id, url = NULL, key = NULL, user = NULL, ...){
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+  disc_GET(check_url(url), sprintf("t/%s.json", id), args, ...)
 }
 
 #' @export
 #' @rdname topics
-create_topic <- function(title, text, category=NULL, url="http://discuss.ropensci.org", key=NULL, user=NULL, ...){
-  args <- dc(list(api_key=check_key(key), api_username=check_user(user),
-                  title=title, raw=text, category=category))
-  disc_POST(url, endpt="posts", args, ...)
+topic_create <- function(title, text, category=NULL, url = NULL,
+                         key = NULL, user = NULL, ...){
+
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
+                  title = title, raw = text, category = category))
+  disc_POST(check_url(url), "posts", args, ...)
+}
+
+#' @export
+#' @rdname topics
+topic_delete <- function(id, url = NULL, key = NULL, user = NULL, ...){
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+  disc_DELETE(check_url(url), sprintf("t/%s.json", id), args, ...)
 }
