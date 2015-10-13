@@ -18,9 +18,13 @@ dg_search(query = NULL, order = NULL, status = NULL, category = NULL,
 
 \item{category}{(character) Category to search for}
 
+\item{username}{(character) User name}
+
 \item{group}{(character) Groupo name}
 
 \item{badge}{(character) Badge name}
+
+\item{in_}{(character) One of likes, posted, watching, tracking, private, bookmarks, first}
 
 \item{posts_count}{(integer) Number of posts per topic}
 
@@ -32,14 +36,10 @@ dg_search(query = NULL, order = NULL, status = NULL, category = NULL,
 
 \item{key}{Your api key on the Discourse installation. See \code{\link{disc_setup}}}
 
-\item{user}{(character) User name}
+\item{user}{Your user name on the Discourse installation. See \code{\link{disc_setup}}}
 
 \item{...}{Named parameters passed on to \code{\link[httr]{GET}},
 \code{\link[httr]{POST}}, \code{\link[httr]{PUT}}, or \code{\link[httr]{DELETE}}}
-
-\item{in}{(character) One of likes, posted, watching, tracking, private, bookmarks, first}
-
-\item{user}{Your user name on the Discourse installation. See \code{\link{disc_setup}}}
 }
 \description{
 Search

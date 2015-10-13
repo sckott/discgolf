@@ -5,10 +5,10 @@
 #' @param order (character) One of views, latest, likes
 #' @param status (character) One of open, closed, archived, noreplies, or single_user
 #' @param category (character) Category to search for
-#' @param user (character) User name
+#' @param username (character) User name
 #' @param group (character) Groupo name
 #' @param badge (character) Badge name
-#' @param in (character) One of likes, posted, watching, tracking, private, bookmarks, first
+#' @param in_ (character) One of likes, posted, watching, tracking, private, bookmarks, first
 #' @param posts_count (integer) Number of posts per topic
 #' @param min_age (integer) Minimum age
 #' @param max_age (integer) Maximum age
