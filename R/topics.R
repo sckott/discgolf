@@ -47,6 +47,18 @@
 #'
 #' # delete a topic
 #' topic_delete(242)
+#'
+#'
+#' # rename a topic - DOESN'T WORK YET
+#' ## create a topic
+#' # res <- topic_create(title = "testing from discgolf - 5",
+#' #    text = "testing from discgolf, again")
+#' ## rename
+#' # res$topic_slug
+#' # topic_rename(res$topic_id, title = "new title")
+#' # topic(res$topic_id)$title
+#' ## cleanup
+#' # topic_delete(res$topic_id)
 #' }
 
 #' @export
@@ -92,4 +104,12 @@ topic_create <- function(title, text, category=NULL, url = NULL,
 topic_delete <- function(id, url = NULL, key = NULL, user = NULL, ...){
   args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
   disc_DELETE(check_url(url), sprintf("t/%s.json", id), args, ...)
+}
+
+#' @export
+#' @rdname topics
+topic_rename <- function(id, title, url = NULL, key = NULL, user = NULL, ...){
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
+                  topic_id = id))
+  disc_PUT(check_url(url), sprintf("t/%s.json", id), args, ...)
 }

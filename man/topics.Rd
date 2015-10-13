@@ -4,6 +4,7 @@
 \alias{topic}
 \alias{topic_create}
 \alias{topic_delete}
+\alias{topic_rename}
 \alias{topics}
 \alias{topics_by}
 \alias{topics_latest}
@@ -22,6 +23,8 @@ topic_create(title, text, category = NULL, url = NULL, key = NULL,
   user = NULL, ...)
 
 topic_delete(id, url = NULL, key = NULL, user = NULL, ...)
+
+topic_rename(id, title, url = NULL, key = NULL, user = NULL, ...)
 }
 \arguments{
 \item{url}{Base url for a Discourse installation. See Details.}
@@ -82,6 +85,18 @@ topic_create(title="testing from discgolf - 2", text=text)
 
 # delete a topic
 topic_delete(242)
+
+
+# rename a topic - DOESN'T WORK YET
+## create a topic
+# res <- topic_create(title = "testing from discgolf - 5",
+#    text = "testing from discgolf, again")
+## rename
+# res$topic_slug
+# topic_rename(res$topic_id, title = "new title")
+# topic(res$topic_id)$title
+## cleanup
+# topic_delete(res$topic_id)
 }
 }
 
