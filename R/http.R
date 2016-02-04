@@ -33,7 +33,7 @@ check_res <- function(x) {
 
 parse_json <- function(x) {
   stopifnot(x$headers$`content-type` == "application/json; charset=utf-8")
-  res <- content(x, as = "text")
+  res <- content(x, as = "text", encoding = "UTF-8")
   jsonlite::fromJSON(res)
 }
 
@@ -49,11 +49,11 @@ dg_head <- function() {
 as.url <- function(x, y) file.path(x, y)
 
 err_handle <- function(y) {
-  bb <- content(y)
+  bb <- jsonlite::fromJSON(content(y, as = "text", encoding = "UTF-8"))
   if (is(bb, "list")) {
     list(status = y$status_code, mssg = unlist(bb$errors))
   } else {
-    html <- xml2::read_html(httr::content(y, "text"))
+    html <- xml2::read_html(httr::content(y, "text", encoding = "UTF-8"))
     list(status = y$status_code,
          mssg = xml2::xml_text(xml2::xml_find_one(html, "//h1"))
     )
