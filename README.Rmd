@@ -32,8 +32,6 @@ The Discourse API is based on using a specific installation of Discourse, which 
 
 ## Functions
 
-Only functions for GETting topics are included as of 2014-12-18
-
 Get latest topics
 
 ```{r eval=FALSE}

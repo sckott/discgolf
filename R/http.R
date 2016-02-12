@@ -38,7 +38,8 @@ parse_json <- function(x) {
 }
 
 parse_log <- function(x) {
-  stopifnot(x$headers$`content-type` == "text/plain; charset=utf-8")
+  stopifnot(x$headers$`content-type` == "application/json; charset=utf-8" ||
+              x$headers$`content-type` == "text/plain; charset=utf-8")
   x$status_code == 200
 }
 
