@@ -3,6 +3,11 @@
 #' @name users
 #' @param username A user name
 #' @param type A type of user, one of active, staff, new, suspended, blocked, or suspect
+#' @param name a name
+#' @param email an email address
+#' @param password a password
+#' @param user_id a user id
+#' @param new_username a username
 #' @template args
 #' @section users_list:
 #' note that there is no paging, so if you have more than 100 users, you only

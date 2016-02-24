@@ -41,6 +41,16 @@ user_update_username(username, new_username, url = NULL, key = NULL,
 \code{\link[httr]{POST}}, \code{\link[httr]{PUT}}, or \code{\link[httr]{DELETE}}}
 
 \item{type}{A type of user, one of active, staff, new, suspended, blocked, or suspect}
+
+\item{name}{a name}
+
+\item{email}{an email address}
+
+\item{password}{a password}
+
+\item{user_id}{a user id}
+
+\item{new_username}{a username}
 }
 \description{
 Work with users
