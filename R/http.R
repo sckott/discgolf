@@ -50,13 +50,14 @@ dg_head <- function() {
 as.url <- function(x, y) file.path(x, y)
 
 err_handle <- function(y) {
-  bb <- jsonlite::fromJSON(content(y, as = "text", encoding = "UTF-8"))
-  if (is(bb, "list")) {
-    list(status = y$status_code, mssg = unlist(bb$errors))
-  } else {
-    html <- xml2::read_html(httr::content(y, "text", encoding = "UTF-8"))
+  z <- httr::content(y, as = "text", encoding = "UTF-8")
+  if (grepl("html", y$headers$`content-type`)) {
+    html <- xml2::read_html(z)
     list(status = y$status_code,
          mssg = xml2::xml_text(xml2::xml_find_one(html, "//h1"))
     )
+  } else {
+    bb <- jsonlite::fromJSON(z)
+    list(status = y$status_code, mssg = unlist(bb$errors))
   }
 }

@@ -7,7 +7,7 @@ test_that("fails well with no input", {
 test_that("fails well with non-existent droplet", {
 	skip_on_cran()
 
-  expect_error(topic("bearbearbear"),
+  expect_error(topic("asfafsfadfasdfd"),
                "The page you requested doesn't exist or is private")
 })
 
