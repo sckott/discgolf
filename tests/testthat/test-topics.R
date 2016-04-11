@@ -4,11 +4,11 @@ test_that("fails well with no input", {
   expect_error(topic(), "argument \"id\" is missing")
 })
 
-test_that("fails well with non-existent droplet", {
+test_that("fails well with non-existent page", {
 	skip_on_cran()
 
   expect_error(topic("asfafsfadfasdfd"),
-               "The page you requested doesn't exist or is private")
+               "404 - Oops! That page doesn’t exist or is private.")
 })
 
 test_that("httr curl options work", {
