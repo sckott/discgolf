@@ -38,8 +38,11 @@ parse_json <- function(x) {
 }
 
 parse_log <- function(x) {
-  stopifnot(x$headers$`content-type` == "application/json; charset=utf-8" ||
-              x$headers$`content-type` == "text/plain; charset=utf-8")
+  stopifnot(
+    x$headers$`content-type` %in%
+      c("application/json; charset=utf-8",
+        "text/plain; charset=utf-8",
+        "text/html; charset=utf-8"))
   x$status_code == 200
 }
 
@@ -51,13 +54,18 @@ as.url <- function(x, y) file.path(x, y)
 
 err_handle <- function(y) {
   z <- httr::content(y, as = "text", encoding = "UTF-8")
-  if (grepl("html", y$headers$`content-type`)) {
-    html <- xml2::read_html(z)
+  if (nchar(z) == 0) {
     list(status = y$status_code,
-         mssg = xml2::xml_text(xml2::xml_find_one(html, "//h1"))
-    )
+         mssg = http_status(y)$reason)
   } else {
-    bb <- jsonlite::fromJSON(z)
-    list(status = y$status_code, mssg = unlist(bb$errors))
+    if (grepl("html", y$headers$`content-type`)) {
+      html <- xml2::read_html(z)
+      list(status = y$status_code,
+           mssg = xml2::xml_text(xml2::xml_find_one(html, "//h1"))
+      )
+    } else {
+      bb <- jsonlite::fromJSON(z)
+      list(status = y$status_code, mssg = unlist(bb$errors))
+    }
   }
 }
