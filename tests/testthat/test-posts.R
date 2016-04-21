@@ -1,6 +1,8 @@
 context("posts")
 
 test_that("fails well with no input", {
+  skip_on_cran()
+
   aa <- post_get(90)
   bb <- post_get(120)
   cc <- post_get(130)
@@ -22,6 +24,8 @@ test_that("fails well with no input", {
 })
 
 test_that("fails well with no input", {
+  skip_on_cran()
+
   expect_error(post_get(), "argument \"post_id\" is missing")
 })
 

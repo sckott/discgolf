@@ -1,6 +1,8 @@
 context("topics")
 
 test_that("fails well with no input", {
+	skip_on_cran()
+
   expect_error(topic(), "argument \"id\" is missing")
 })
 

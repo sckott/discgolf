@@ -1,6 +1,8 @@
 context("badges")
 
 test_that("badges works as expected", {
+  skip_on_cran()
+
   aa <- badges()
 
   expect_is(aa, "list")
@@ -16,6 +18,8 @@ test_that("badges works as expected", {
 })
 
 test_that("badges_user works as expected", {
+  skip_on_cran()
+
   aa <- badges_user("sckott")
 
   expect_is(aa, "list")
@@ -32,10 +36,14 @@ test_that("badges_user works as expected", {
 })
 
 test_that("badges_user fails well with no input", {
+  skip_on_cran()
+
   expect_error(badges_user(), "argument \"username\" is missing")
 })
 
 test_that("badge_creatse fails well with no input", {
+  skip_on_cran()
+
   expect_error(badge_create(), "argument \"name\" is missing")
 })
 

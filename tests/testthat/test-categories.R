@@ -1,6 +1,8 @@
 context("categories")
 
 test_that("categories works as expected", {
+  skip_on_cran()
+
   aa <- categories()
 
   expect_is(aa, "list")
@@ -13,6 +15,8 @@ test_that("categories works as expected", {
 })
 
 test_that("category works as expected", {
+  skip_on_cran()
+
   aa <- category("questions")
 
   expect_is(aa, "list")
@@ -25,6 +29,8 @@ test_that("category works as expected", {
 })
 
 test_that("category_latest_topics works as expected", {
+  skip_on_cran()
+
   aa <- category_latest_topics("packages")
 
   expect_is(aa, "list")
@@ -37,6 +43,8 @@ test_that("category_latest_topics works as expected", {
 })
 
 test_that("fails well with no input", {
+  skip_on_cran()
+
   expect_error(category(), "argument \"category\" is missing")
   expect_error(category_create(), "argument \"category\" is missing")
   expect_error(category_latest_topics(), "argument \"category\" is missing")
