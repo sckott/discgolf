@@ -28,7 +28,7 @@ groups <- function(url = NULL, key = NULL, user = NULL, ...){
 #' @rdname groups
 group_members <- function(name, url = NULL, key = NULL, user = NULL, ...){
   args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_GET(check_url(url), sprintf("groups/%s/members.json", group_name), args, ...)
+  disc_GET(check_url(url), sprintf("groups/%s/members.json", name), args, ...)
 }
 
 #' @export
