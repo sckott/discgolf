@@ -3,3 +3,4 @@
 README.Rmd
 .travis.yml
 man-roxygen
+cran-comments.md
