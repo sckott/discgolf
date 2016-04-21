@@ -1,5 +1,5 @@
 discgolf
-=======
+========
 
 ```{r echo=FALSE}
 knitr::opts_chunk$set(
@@ -16,6 +16,14 @@ knitr::opts_chunk$set(
 `discgolf` is an R client for the Discourse API, based off the Ruby gem [discourse_api](https://github.com/discourse/discourse_api)
 
 ## Installation
+
+CRAN version
+
+```{r eval=FALSE}
+install.packages("discgolf")
+```
+
+Development version
 
 ```{r eval=FALSE}
 install.packages("devtools")
