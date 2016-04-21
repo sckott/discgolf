@@ -2,7 +2,6 @@
 % Please edit documentation in R/posts.R
 \name{posts}
 \alias{post_create}
-\alias{post_edit}
 \alias{post_get}
 \alias{post_wikify}
 \alias{posts}
@@ -11,8 +10,6 @@
 post_get(post_id, url = NULL, key = NULL, user = NULL, ...)
 
 post_create(topic_id, text, url = NULL, key = NULL, user = NULL, ...)
-
-post_edit(post_id, text, url = NULL, key = NULL, user = NULL, ...)
 
 post_wikify(post_id, url = NULL, key = NULL, user = NULL, ...)
 }

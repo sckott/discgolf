@@ -45,15 +45,6 @@ post_create <- function(topic_id, text, url=NULL, key=NULL, user=NULL, ...){
 
 #' @export
 #' @rdname posts
-post_edit <- function(post_id, text, url=NULL, key=NULL, user=NULL, ...){
-  message("blarg, doesn't work yet")
-  # args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  # disc_PUT(check_url(url), paste0("posts/%s", post_id), args,
-  #          body = list(raw = text), ...)
-}
-
-#' @export
-#' @rdname posts
 post_wikify <- function(post_id, url=NULL, key=NULL, user=NULL, ...){
   args <- dc(list(api_key = check_key(key), api_username = check_user(user),
                   wiki = "true"))
