@@ -154,3 +154,7 @@ user_update_username('jane_doe', 'jane_doe2')
 ```r
 user_delete(x$user_id)
 ```
+
+## Meta
+
+* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
