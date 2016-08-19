@@ -5,3 +5,4 @@ README.Rmd
 man-roxygen
 cran-comments.md
 ^CONDUCT\.md$
+^docker_notes\.md$

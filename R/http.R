@@ -61,7 +61,7 @@ err_handle <- function(y) {
     if (grepl("html", y$headers$`content-type`)) {
       html <- xml2::read_html(z)
       list(status = y$status_code,
-           mssg = xml2::xml_text(xml2::xml_find_one(html, "//h1"))
+           mssg = xml2::xml_text(xml2::xml_find_first(html, "//h1"))
       )
     } else {
       bb <- jsonlite::fromJSON(z)
