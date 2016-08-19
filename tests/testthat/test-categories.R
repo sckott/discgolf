@@ -6,9 +6,8 @@ test_that("categories works as expected", {
   aa <- categories()
 
   expect_is(aa, "list")
-  expect_named(aa, c("featured_users", "category_list"))
+  expect_named(aa, "category_list")
 
-  expect_is(aa$featured_users, "data.frame")
   expect_is(aa$category_list, "list")
   expect_is(aa$category_list$categories, "data.frame")
   expect_is(aa$category_list$can_create_category, "logical")
