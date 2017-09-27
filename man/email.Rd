@@ -34,4 +34,3 @@ email_settings()
 list_email("received")
 }
 }
-

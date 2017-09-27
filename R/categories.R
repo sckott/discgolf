@@ -28,7 +28,7 @@
 #' category_new_topics("packages")
 #'
 #' # create a category
-#' category_create("stuff", "F7941D", "FFFFFF", "My new category")
+#' category_create("stuff3", "F7941D", "FFFFFF", "My new category")
 #' }
 categories <- function(url = NULL, key = NULL, user = NULL, ...){
   args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
@@ -69,9 +69,9 @@ category_create <- function(category, color, text_color, description = NULL,
                             permissions = NULL, parent_category = NULL,
                             url = NULL, key = NULL, user = NULL, ...){
 
-  args <- dc(list(name = category, color = color, text_color = text_color,
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+  body <- dc(list(name = category, color = color, text_color = text_color,
                   description = description, permissions = permissions,
-                  parent_category_id = parent_category,
-                  api_key = check_key(key), api_username = check_user(user)))
-  disc_POST(check_url(url), "categories", args, ...)
+                  parent_category_id = parent_category))
+  disc_POST(check_url(url), "categories", args, body, ...)
 }

@@ -32,13 +32,11 @@ test_that("fails well with no input", {
 test_that("fails well with non-existent page", {
   skip_on_cran()
 
-  expect_error(post_get("asfafsfadfasdfd"),
-               "404 - The requested URL or resource could not be found.")
+  expect_error(post_get("asfafsfadfasdfd"), "Not Found \\(HTTP 404\\)")
 })
 
-test_that("httr curl options work", {
+test_that("curl options work", {
   skip_on_cran()
 
-  library("httr")
-  expect_error(post_get("asdfadf", config = timeout(seconds = 0.001)))
+  expect_error(post_get("asdfadf", timeout_ms = 1))
 })

@@ -50,13 +50,11 @@ test_that("badge_creatse fails well with no input", {
 test_that("fails well with non-existent user", {
   skip_on_cran()
 
-  expect_error(badges_user("asfafsfadfasdfd"),
-               "404 - The requested URL or resource could not be found.")
+  expect_error(badges_user("asfafsfadfasdfd"), "Not Found \\(HTTP 404\\)")
 })
 
 test_that("httr curl options work", {
   skip_on_cran()
 
-  library("httr")
-  expect_error(badges(config = timeout(seconds = 0.001)))
+  expect_error(badges(timeout_ms = 1))
 })

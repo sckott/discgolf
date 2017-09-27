@@ -14,7 +14,8 @@ dg_search(query = NULL, order = NULL, status = NULL, category = NULL,
 
 \item{order}{(character) One of views, latest, likes}
 
-\item{status}{(character) One of open, closed, archived, noreplies, or single_user}
+\item{status}{(character) One of open, closed, archived, noreplies,
+or single_user}
 
 \item{category}{(character) Category to search for}
 
@@ -24,7 +25,8 @@ dg_search(query = NULL, order = NULL, status = NULL, category = NULL,
 
 \item{badge}{(character) Badge name}
 
-\item{in_}{(character) One of likes, posted, watching, tracking, private, bookmarks, first}
+\item{in_}{(character) One of likes, posted, watching, tracking, private,
+bookmarks, first}
 
 \item{posts_count}{(integer) Number of posts per topic}
 
@@ -52,4 +54,3 @@ dg_search(in_ = "posted")
 dg_search(status = "open")
 }
 }
-

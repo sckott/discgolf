@@ -2,11 +2,10 @@
 % Please edit documentation in R/discgolf-package.R
 \docType{package}
 \name{discgolf-package}
-\alias{discgolf}
 \alias{discgolf-package}
+\alias{discgolf}
 \title{R Client for Discourse API}
 \description{
 R Client for Discourse API
 }
 \keyword{package}
-

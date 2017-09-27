@@ -14,7 +14,7 @@
 #' group_members("trust_level_3")
 #'
 #' # create a group
-#' (res <- group_create("group_testing"))
+#' (res <- group_create("group_testing2"))
 #'
 #' # delete a group
 #' group_delete(res$basic_group$id)
@@ -34,8 +34,9 @@ group_members <- function(name, url = NULL, key = NULL, user = NULL, ...){
 #' @export
 #' @rdname groups
 group_create <- function(name, url = NULL, key = NULL, user = NULL, ...) {
-  args <- dc(list(name = name, api_key = check_key(key), api_username = check_user(user)))
-  disc_POST(check_url(url), "admin/groups", args, ...)
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+  body <- dc(list(`group[name]` = name))
+  disc_POST(check_url(url), "admin/groups", args, body, ...)
 }
 
 #' @export

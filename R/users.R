@@ -2,7 +2,8 @@
 #'
 #' @name users
 #' @param username A user name
-#' @param type A type of user, one of active, staff, new, suspended, blocked, or suspect
+#' @param type A type of user, one of active, staff, new, suspended,
+#' blocked, or suspect
 #' @param name a name
 #' @param email an email address
 #' @param password a password
@@ -22,16 +23,17 @@
 #' users_list('new')
 #'
 #' # create a user
-#' (x <- user_create("jane doe", "jane@doe.com", "jane_doe", "afafasfdasdf"))
+#' (x <- user_create("jane doe", "janie@doe.com", "jane_doe",
+#'   "fTh6bmoPaaWrlI5fLDM6wy"))
 #'
 #' # activate a user
 #' user_activate(x$user_id)
 #'
 #' # upate email address
-#' user_update_email('jane_doe', 'jane2@doe.com')
+#' user_update_email(username = 'jane_doe', email = 'jane2@doe.com')
 #'
 #' # upate user name
-#' user_update_username('jane_doe', 'jane_doe2')
+#' user_update_username('jane_doe', 'jane_doe5')
 #'
 #' # delete a user
 #' user_delete(x$user_id)
@@ -53,17 +55,20 @@ users_list <- function(type, url=NULL, key=NULL, user=NULL, ...){
 
 #' @export
 #' @rdname users
-user_create <- function(name, email, username, password, url=NULL, key=NULL, user=NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
-                  name = name, email = email, username = username, password = password))
-  disc_POST(check_url(url), "users", args, ...)
+user_create <- function(name, email, username, password, url=NULL, key=NULL,
+                        user=NULL, ...){
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+  body <- dc(list(name = name, email = email, username = username,
+                  password = password))
+  disc_POST(check_url(url), "users", args, body, ...)
 }
 
 #' @export
 #' @rdname users
 user_activate <- function(user_id, url=NULL, key=NULL, user=NULL, ...){
   args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_PUT(check_url(url), sprintf("admin/users/%s/activate", user_id), args, ...)
+  disc_PUT(check_url(url), sprintf("admin/users/%s/activate", user_id),
+           args, ...)
 }
 
 #' @export
@@ -75,16 +80,18 @@ user_delete <- function(user_id, url=NULL, key=NULL, user=NULL, ...){
 
 #' @export
 #' @rdname users
-user_update_email <- function(username, email, url=NULL, key=NULL, user=NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
-                  email = email))
-  disc_PUT(check_url(url), sprintf("users/%s/preferences/email", username), args, ...)
+user_update_email <- function(username, email, url=NULL, key=NULL, user=NULL,
+                              ...){
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+  disc_PUT(check_url(url), sprintf("users/%s/preferences/email", username),
+           args, dc(list(email = email)), ...)
 }
 
 #' @export
 #' @rdname users
-user_update_username <- function(username, new_username, url=NULL, key=NULL, user=NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
-                  new_username = new_username))
-  disc_PUT(check_url(url), sprintf("users/%s/preferences/username", username), args, ...)
+user_update_username <- function(username, new_username, url=NULL, key=NULL,
+                                 user=NULL, ...){
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+  disc_PUT(check_url(url), sprintf("users/%s/preferences/username", username),
+           args, dc(list(new_username = new_username)), ...)
 }

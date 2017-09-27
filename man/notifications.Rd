@@ -24,4 +24,3 @@ Notifications data
 notifications()
 }
 }
-

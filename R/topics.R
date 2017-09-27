@@ -12,12 +12,11 @@
 #' topics_by("cboettig")
 #' topic(8)
 #'
-#' library("httr")
-#' topics_latest(config=verbose())
+#' topics_latest(verbose = TRUE)
 #'
 #' # Create topic
 #' ## simple
-#' topic_create(title="testing from discgolf - 1", text="testing from discgolf, hello world!
+#' topic_create(title="testing from discgolf - 10", text="testing from discgolf, hello world!
 #' hopefully this works")
 #'
 #' ## more complicated
@@ -40,7 +39,7 @@
 #' #> Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 #' ```
 #' '
-#' topic_create(title="testing from discgolf - 2", text=text)
+#' topic_create(title="testing from discgolf - 23", text=text)
 #'
 #' # delete a topic
 #' topic_delete(242)
@@ -88,12 +87,12 @@ topic <- function(id, url = NULL, key = NULL, user = NULL, ...){
 
 #' @export
 #' @rdname topics
-topic_create <- function(title, text, category=NULL, url = NULL,
+topic_create <- function(title, text, category = NULL, url = NULL,
                          key = NULL, user = NULL, ...){
 
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
-                  title = title, raw = text, category = category))
-  disc_POST(check_url(url), "posts", args, ...)
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+  body <- dc(list(title = title, raw = text, category = category))
+  disc_POST(check_url(url), "posts", args, body, ...)
 }
 
 #' @export

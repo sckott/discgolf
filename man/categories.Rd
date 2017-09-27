@@ -3,10 +3,10 @@
 \name{categories}
 \alias{categories}
 \alias{category}
-\alias{category_create}
 \alias{category_latest_topics}
-\alias{category_new_topics}
 \alias{category_top_topics}
+\alias{category_new_topics}
+\alias{category_create}
 \title{Work with categories}
 \usage{
 categories(url = NULL, key = NULL, user = NULL, ...)
@@ -71,7 +71,6 @@ category_top_topics("packages")
 category_new_topics("packages")
 
 # create a category
-category_create("stuff", "F7941D", "FFFFFF", "My new category")
+category_create("stuff3", "F7941D", "FFFFFF", "My new category")
 }
 }
-

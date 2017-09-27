@@ -26,4 +26,3 @@ Private messages
 private_messages(username = "sckott")
 }
 }
-

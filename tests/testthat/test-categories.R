@@ -19,7 +19,7 @@ test_that("category works as expected", {
   aa <- category("questions")
 
   expect_is(aa, "list")
-  expect_named(aa, c("users", "topic_list"))
+  expect_named(aa, c("users", "primary_groups", "topic_list"))
 
   expect_is(aa$users, "data.frame")
   expect_is(aa$topic_list, "list")
@@ -33,7 +33,7 @@ test_that("category_latest_topics works as expected", {
   aa <- category_latest_topics("packages")
 
   expect_is(aa, "list")
-  expect_named(aa, c("users", "topic_list"))
+  expect_named(aa, c("users", "primary_groups", "topic_list"))
 
   expect_is(aa$users, "data.frame")
   expect_is(aa$topic_list, "list")
@@ -54,13 +54,11 @@ test_that("fails well with no input", {
 test_that("fails well with non-existent user", {
   skip_on_cran()
 
-  expect_error(category("asfafsfadfasdfd"),
-               "404 - The requested URL or resource could not be found.")
+  expect_error(category("asfafsfadfasdfd"), "Not Found \\(HTTP 404\\)")
 })
 
 test_that("httr curl options work", {
   skip_on_cran()
 
-  library("httr")
-  expect_error(categories(config = timeout(seconds = 0.001)))
+  expect_error(categories(timeout_ms = 1))
 })
