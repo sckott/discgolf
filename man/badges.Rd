@@ -23,8 +23,7 @@ badge_create(name, badge_type_id, description = NULL, allow_title = NULL,
 
 \item{user}{Your user name on the Discourse installation. See \code{\link{disc_setup}}}
 
-\item{...}{Named parameters passed on to \code{\link[httr]{GET}},
-\code{\link[httr]{POST}}, \code{\link[httr]{PUT}}, or \code{\link[httr]{DELETE}}}
+\item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
 
 \item{username}{A current user name. required}
 

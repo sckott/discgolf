@@ -13,8 +13,7 @@ notifications(url = NULL, key = NULL, user = NULL, ...)
 
 \item{user}{Your user name on the Discourse installation. See \code{\link{disc_setup}}}
 
-\item{...}{Named parameters passed on to \code{\link[httr]{GET}},
-\code{\link[httr]{POST}}, \code{\link[httr]{PUT}}, or \code{\link[httr]{DELETE}}}
+\item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
 }
 \description{
 Notifications data

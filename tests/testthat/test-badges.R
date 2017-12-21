@@ -53,7 +53,7 @@ test_that("fails well with non-existent user", {
   expect_error(badges_user("asfafsfadfasdfd"), "Not Found \\(HTTP 404\\)")
 })
 
-test_that("httr curl options work", {
+test_that("curl options work", {
   skip_on_cran()
 
   expect_error(badges(timeout_ms = 1))
