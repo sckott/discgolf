@@ -17,11 +17,14 @@ badge_create(name, badge_type_id, description = NULL, allow_title = NULL,
   long_description = NULL, url = NULL, key = NULL, user = NULL, ...)
 }
 \arguments{
-\item{url}{Base url for a Discourse installation. See \code{\link{disc_setup}}}
+\item{url}{Base url for a Discourse installation. See 
+\code{\link{disc_setup}}}
 
-\item{key}{Your api key on the Discourse installation. See \code{\link{disc_setup}}}
+\item{key}{Your api key on the Discourse installation. See 
+\code{\link{disc_setup}}}
 
-\item{user}{Your user name on the Discourse installation. See \code{\link{disc_setup}}}
+\item{user}{Your user name on the Discourse installation. See 
+\code{\link{disc_setup}}}
 
 \item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
 
@@ -68,6 +71,6 @@ badges()
 badges_user("sckott")
 
 # create a badge
-(res <- badge_create(name = "funnerbadge", badge_type_id = 3))
+(res <- badge_create(name = "funnestbadge", badge_type_id = 3))
 }
 }

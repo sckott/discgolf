@@ -22,7 +22,7 @@
 #' ## more complicated
 #' text <- '
 #' ## this time with markdown
-#'
+#' 
 #' ```r
 #' print("hello world")
 #' #> [1] "hello world"

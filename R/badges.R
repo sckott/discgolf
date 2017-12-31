@@ -26,7 +26,7 @@
 #' badges_user("sckott")
 #'
 #' # create a badge
-#' (res <- badge_create(name = "funnerbadge", badge_type_id = 3))
+#' (res <- badge_create(name = "funnestbadge", badge_type_id = 3))
 #' }
 badges <- function(url = NULL, key = NULL, user = NULL, ...){
   args <- dc(list(api_key = check_key(key), api_username = check_user(user)))

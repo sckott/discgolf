@@ -11,11 +11,14 @@ email_settings(url = NULL, key = NULL, user = NULL, ...)
 list_email(filter, url = NULL, key = NULL, user = NULL, ...)
 }
 \arguments{
-\item{url}{Base url for a Discourse installation. See \code{\link{disc_setup}}}
+\item{url}{Base url for a Discourse installation. See 
+\code{\link{disc_setup}}}
 
-\item{key}{Your api key on the Discourse installation. See \code{\link{disc_setup}}}
+\item{key}{Your api key on the Discourse installation. See 
+\code{\link{disc_setup}}}
 
-\item{user}{Your user name on the Discourse installation. See \code{\link{disc_setup}}}
+\item{user}{Your user name on the Discourse installation. See 
+\code{\link{disc_setup}}}
 
 \item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
 

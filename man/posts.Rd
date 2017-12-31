@@ -16,11 +16,14 @@ post_wikify(post_id, url = NULL, key = NULL, user = NULL, ...)
 \arguments{
 \item{post_id}{A post id}
 
-\item{url}{Base url for a Discourse installation. See \code{\link{disc_setup}}}
+\item{url}{Base url for a Discourse installation. See 
+\code{\link{disc_setup}}}
 
-\item{key}{Your api key on the Discourse installation. See \code{\link{disc_setup}}}
+\item{key}{Your api key on the Discourse installation. See 
+\code{\link{disc_setup}}}
 
-\item{user}{Your user name on the Discourse installation. See \code{\link{disc_setup}}}
+\item{user}{Your user name on the Discourse installation. See 
+\code{\link{disc_setup}}}
 
 \item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
 
