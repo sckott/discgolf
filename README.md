@@ -10,6 +10,8 @@ discgolf
 
 `discgolf` is an R client for the Discourse API, based off the Ruby gem [discourse_api](https://github.com/discourse/discourse_api)
 
+Discourse API docs: <http://docs.discourse.org>
+
 ## Installation
 
 CRAN version
