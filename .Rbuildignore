@@ -4,5 +4,5 @@ README.Rmd
 .travis.yml
 man-roxygen
 cran-comments.md
-^CONDUCT\.md$
+^CODE_OF_CONDUCT\.md$
 ^docker_notes\.md$
