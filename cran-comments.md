@@ -11,8 +11,8 @@
  License components with restrictions and base license permitting such:
      MIT + file LICENSE
    File 'LICENSE':
-     YEAR: 2017
-     COPYRIGHT HOLDER: Scott Chamberlain; RStudio
+     YEAR: 2018
+     COPYRIGHT HOLDER: Scott Chamberlain
 
 ## Reverse dependencies
 
