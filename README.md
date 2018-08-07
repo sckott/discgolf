@@ -2,7 +2,7 @@ discgolf
 ========
 
 
-
+[![cran checks](https://cranchecks.info/badges/worst/discgolf)](https://cranchecks.info/pkgs/discgolf)
 [![Build Status](https://travis-ci.org/sckott/discgolf.svg)](https://travis-ci.org/sckott/discgolf)
 [![codecov.io](https://codecov.io/github/sckott/discgolf/coverage.svg?branch=master)](https://codecov.io/github/sckott/discgolf?branch=master)
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/discgolf?color=FAB657)](https://github.com/metacran/cranlogs.app)
