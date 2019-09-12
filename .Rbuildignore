@@ -6,3 +6,4 @@ man-roxygen
 cran-comments.md
 ^CODE_OF_CONDUCT\.md$
 ^docker_notes\.md$
+^Makefile$

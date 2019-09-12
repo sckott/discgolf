@@ -10,11 +10,12 @@ badges(url = NULL, key = NULL, user = NULL, ...)
 
 badges_user(username, url = NULL, key = NULL, user = NULL, ...)
 
-badge_create(name, badge_type_id, description = NULL, allow_title = NULL,
-  multiple_grant = NULL, icon = NULL, listable = NULL,
-  target_posts = NULL, enabled = NULL, auto_revoke = NULL,
-  badge_grouping_id = NULL, show_posts = NULL, image = NULL,
-  long_description = NULL, url = NULL, key = NULL, user = NULL, ...)
+badge_create(name, badge_type_id, description = NULL,
+  allow_title = NULL, multiple_grant = NULL, icon = NULL,
+  listable = NULL, target_posts = NULL, enabled = NULL,
+  auto_revoke = NULL, badge_grouping_id = NULL, show_posts = NULL,
+  image = NULL, long_description = NULL, url = NULL, key = NULL,
+  user = NULL, ...)
 }
 \arguments{
 \item{url}{Base url for a Discourse installation. See 

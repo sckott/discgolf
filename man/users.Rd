@@ -22,8 +22,8 @@ user_activate(user_id, url = NULL, key = NULL, user = NULL, ...)
 
 user_delete(user_id, url = NULL, key = NULL, user = NULL, ...)
 
-user_update_email(username, email, url = NULL, key = NULL, user = NULL,
-  ...)
+user_update_email(username, email, url = NULL, key = NULL,
+  user = NULL, ...)
 
 user_update_username(username, new_username, url = NULL, key = NULL,
   user = NULL, ...)
