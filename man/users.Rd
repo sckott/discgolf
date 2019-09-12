@@ -13,7 +13,8 @@
 \usage{
 user(username, url = NULL, key = NULL, user = NULL, ...)
 
-users_list(type, url = NULL, key = NULL, user = NULL, ...)
+users_list(type, url = NULL, key = NULL, user = NULL, page = NULL,
+  ...)
 
 user_create(name, email, username, password, url = NULL, key = NULL,
   user = NULL, ...)
@@ -45,6 +46,9 @@ user_update_username(username, new_username, url = NULL, key = NULL,
 \item{type}{A type of user, one of active, staff, new, suspended,
 blocked, or suspect}
 
+\item{page}{(integer) a page number for pagination. records per page
+is fixed at 100 (that is: up to 100)}
+
 \item{name}{a name}
 
 \item{email}{an email address}
@@ -73,6 +77,8 @@ user('cboettig')
 # list users
 users_list('staff')
 users_list('new')
+NROW(users_list('active', page = 1))
+NROW(users_list('active', page = 2))
 
 # create a user
 (x <- user_create("jane doe", "janie@doe.com", "jane_doe",

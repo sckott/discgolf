@@ -4,7 +4,7 @@ Description: Client for the Discourse API. Discourse is a open source
     discussion forum platform (<https://www.discourse.org/>). It comes with 'RESTful'
     API access to an installation. This client requires that you are authorized
     to access a Discourse installation, either yours or another.
-Version: 0.2.1.9100
+Version: 0.2.2.9100
 License: MIT + file LICENSE
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"), email =
     "myrmecocystus@gmail.com")

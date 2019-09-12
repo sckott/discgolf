@@ -9,6 +9,8 @@
 #' @param password a password
 #' @param user_id a user id
 #' @param new_username a username
+#' @param page (integer) a page number for pagination. records per page
+#' is fixed at 100 (that is: up to 100)
 #' @template args
 #' @section users_list:
 #' note that there is no paging, so if you have more than 100 users, you only
@@ -21,6 +23,8 @@
 #' # list users
 #' users_list('staff')
 #' users_list('new')
+#' NROW(users_list('active', page = 1))
+#' NROW(users_list('active', page = 2))
 #'
 #' # create a user
 #' (x <- user_create("jane doe", "janie@doe.com", "jane_doe",
@@ -48,8 +52,9 @@ user <- function(username, url = NULL, key = NULL, user = NULL, ...) {
 
 #' @export
 #' @rdname users
-users_list <- function(type, url=NULL, key=NULL, user=NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+users_list <- function(type, url=NULL, key=NULL, user=NULL, page=NULL, ...){
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
+    page = page))
   disc_GET(check_url(url), sprintf("admin/users/list/%s.json", type), args, ...)
 }
 

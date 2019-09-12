@@ -5,9 +5,12 @@
 #' @param title Title of the new topic
 #' @param text Raw text, can include markdown and will be rendered.
 #' @param category Category to apply to topic, if any, Default: none
+#' @param page (integer) a page number for pagination. records per page
+#' is fixed at 30 (that is: up to 30)
 #' @template args
 #' @examples \dontrun{
 #' topics_latest()
+#' topics_latest(page = 2)
 #' topics_new()
 #' topics_by("cboettig")
 #' topic(8)
@@ -59,8 +62,11 @@
 
 #' @export
 #' @rdname topics
-topics_latest <- function(url = NULL, key = NULL, user = NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+topics_latest <- function(url = NULL, key = NULL, user = NULL, page = NULL,
+  ...) {
+
+  args <- dc(list(api_key = check_key(key),
+    api_username = check_user(user), page = page))
   disc_GET(check_url(url), "latest.json", args, ...)
 }
 

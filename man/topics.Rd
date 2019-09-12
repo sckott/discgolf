@@ -11,7 +11,8 @@
 \alias{topic_rename}
 \title{Work with topics}
 \usage{
-topics_latest(url = NULL, key = NULL, user = NULL, ...)
+topics_latest(url = NULL, key = NULL, user = NULL, page = NULL,
+  ...)
 
 topics_new(url = NULL, key = NULL, user = NULL, ...)
 
@@ -36,6 +37,9 @@ topic_rename(id, title, url = NULL, key = NULL, user = NULL, ...)
 \item{user}{Your user name on the Discourse installation. See 
 \code{\link{disc_setup}}}
 
+\item{page}{(integer) a page number for pagination. records per page
+is fixed at 30 (that is: up to 30)}
+
 \item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
 
 \item{id}{A user identifier, or a topic identifier. See examples.}
@@ -52,6 +56,7 @@ Work with topics
 \examples{
 \dontrun{
 topics_latest()
+topics_latest(page = 2)
 topics_new()
 topics_by("cboettig")
 topic(8)
