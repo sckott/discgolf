@@ -2,15 +2,16 @@ discgolf
 ========
 
 
+
 [![cran checks](https://cranchecks.info/badges/worst/discgolf)](https://cranchecks.info/pkgs/discgolf)
 [![Build Status](https://travis-ci.org/sckott/discgolf.svg)](https://travis-ci.org/sckott/discgolf)
 [![codecov.io](https://codecov.io/github/sckott/discgolf/coverage.svg?branch=master)](https://codecov.io/github/sckott/discgolf?branch=master)
-[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/discgolf?color=FAB657)](https://github.com/metacran/cranlogs.app)
-[![cran version](http://www.r-pkg.org/badges/version/discgolf)](https://cran.r-project.org/package=discgolf)
+[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/discgolf?color=FAB657)](https://github.com/metacran/cranlogs.app)
+[![cran version](https://www.r-pkg.org/badges/version/discgolf)](https://cran.r-project.org/package=discgolf)
 
-`discgolf` is an R client for the Discourse API, based off the Ruby gem [discourse_api](https://github.com/discourse/discourse_api)
+`discgolf` is an R client for the Discourse API, inspired by the Ruby gem [discourse_api](https://github.com/discourse/discourse_api)
 
-Discourse API docs: <http://docs.discourse.org>
+Discourse API docs: <https://docs.discourse.org>
 
 ## Installation
 
@@ -25,8 +26,8 @@ Development version
 
 
 ```r
-install.packages("devtools")
-devtools::install_github("sckott/discgolf")
+install.packages("remotes")
+remotes::install_github("sckott/discgolf")
 ```
 
 
