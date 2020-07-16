@@ -11,7 +11,7 @@
 \usage{
 categories(url = NULL, key = NULL, user = NULL, ...)
 
-category(category, url = NULL, key = NULL, user = NULL, ...)
+category(category, url = NULL, key = NULL, user = NULL, page = NULL, ...)
 
 category_latest_topics(category, url = NULL, key = NULL, user = NULL, ...)
 
@@ -46,6 +46,9 @@ category_create(
 
 \item{category}{Category name. required}
 
+\item{page}{(integer) a page number for pagination. records per page
+is fixed at 30 (that is: up to 30)}
+
 \item{color}{A color by name or hex string. optional}
 
 \item{text_color}{A color by name or hex string. optional}
@@ -69,7 +72,7 @@ Apprently there's no ability to delete categories via the API.
 categories()
 
 # a specfic category
-category("questions")
+category("usecases")
 category("packages")
 
 # latest topics for a category

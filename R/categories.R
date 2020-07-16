@@ -8,6 +8,8 @@
 #' @param permissions Permissions - a list with the group name and permission_type
 #' which is an integer: 1 = Full, 2 = Create Post, 3 = Read Only. optional
 #' @param parent_category x. optional
+#' @param page (integer) a page number for pagination. records per page
+#' is fixed at 30 (that is: up to 30)
 #' @template args
 #' @details Apprently there's no ability to delete categories via the API.
 #' @examples \dontrun{
@@ -15,7 +17,7 @@
 #' categories()
 #'
 #' # a specfic category
-#' category("questions")
+#' category("usecases")
 #' category("packages")
 #'
 #' # latest topics for a category
@@ -30,15 +32,18 @@
 #' # create a category
 #' category_create("stuff3", "F7941D", "FFFFFF", "My new category")
 #' }
-categories <- function(url = NULL, key = NULL, user = NULL, ...){
+categories <- function(url = NULL, key = NULL, user = NULL, ...) {
   args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
   disc_GET(check_url(url), "categories.json", args, ...)
 }
 
 #' @export
 #' @rdname categories
-category <- function(category, url = NULL, key = NULL, user = NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+category <- function(category, url = NULL, key = NULL, user = NULL,
+  page = NULL, ...) {
+
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
+    page = page))
   disc_GET(check_url(url), sprintf("c/%s.json", category), args, ...)
 }
 
