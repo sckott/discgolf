@@ -4,7 +4,7 @@
 \name{discgolf-package}
 \alias{discgolf-package}
 \alias{discgolf}
-\title{R Client for Discourse API}
+\title{discgolf}
 \description{
 R Client for Discourse API
 }

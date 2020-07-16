@@ -4,7 +4,11 @@
 #' @param start_date,end_date start and end dates
 #' @param category_id a category id
 #' @param group_id a group id
-#' @template args
+#' @param url Base url for a Discourse installation. See 
+#' [disc_setup]
+#' @param key Your api key on the Discourse installation. See 
+#' [disc_setup]
+#' @param ... Named parameters passed on to [crul::verb-GET]
 #' @examples \dontrun{
 #' x <- reports_page_views(start_date = "2019-08-01", end_date = "2019-09-11")
 #' }

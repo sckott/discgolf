@@ -11,8 +11,7 @@
 \alias{topic_rename}
 \title{Work with topics}
 \usage{
-topics_latest(url = NULL, key = NULL, user = NULL, page = NULL,
-  ...)
+topics_latest(url = NULL, key = NULL, user = NULL, page = NULL, ...)
 
 topics_new(url = NULL, key = NULL, user = NULL, ...)
 
@@ -20,8 +19,15 @@ topics_by(id, url = NULL, key = NULL, user = NULL, ...)
 
 topic(id, url = NULL, key = NULL, user = NULL, ...)
 
-topic_create(title, text, category = NULL, url = NULL, key = NULL,
-  user = NULL, ...)
+topic_create(
+  title,
+  text,
+  category = NULL,
+  url = NULL,
+  key = NULL,
+  user = NULL,
+  ...
+)
 
 topic_delete(id, url = NULL, key = NULL, user = NULL, ...)
 

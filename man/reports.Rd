@@ -5,8 +5,15 @@
 \alias{reports_page_views}
 \title{Reports}
 \usage{
-reports_page_views(start_date, end_date, category_id = NULL,
-  group_id = NULL, url = NULL, key = NULL, ...)
+reports_page_views(
+  start_date,
+  end_date,
+  category_id = NULL,
+  group_id = NULL,
+  url = NULL,
+  key = NULL,
+  ...
+)
 }
 \arguments{
 \item{start_date, end_date}{start and end dates}
@@ -16,15 +23,12 @@ reports_page_views(start_date, end_date, category_id = NULL,
 \item{group_id}{a group id}
 
 \item{url}{Base url for a Discourse installation. See 
-\code{\link{disc_setup}}}
+[disc_setup]}
 
 \item{key}{Your api key on the Discourse installation. See 
-\code{\link{disc_setup}}}
+[disc_setup]}
 
-\item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
-
-\item{user}{Your user name on the Discourse installation. See 
-\code{\link{disc_setup}}}
+\item{...}{Named parameters passed on to [crul::verb-GET]}
 }
 \description{
 Reports

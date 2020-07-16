@@ -13,18 +13,24 @@ categories(url = NULL, key = NULL, user = NULL, ...)
 
 category(category, url = NULL, key = NULL, user = NULL, ...)
 
-category_latest_topics(category, url = NULL, key = NULL, user = NULL,
-  ...)
+category_latest_topics(category, url = NULL, key = NULL, user = NULL, ...)
 
-category_top_topics(category, url = NULL, key = NULL, user = NULL,
-  ...)
+category_top_topics(category, url = NULL, key = NULL, user = NULL, ...)
 
-category_new_topics(category, url = NULL, key = NULL, user = NULL,
-  ...)
+category_new_topics(category, url = NULL, key = NULL, user = NULL, ...)
 
-category_create(category, color, text_color, description = NULL,
-  permissions = NULL, parent_category = NULL, url = NULL,
-  key = NULL, user = NULL, ...)
+category_create(
+  category,
+  color,
+  text_color,
+  description = NULL,
+  permissions = NULL,
+  parent_category = NULL,
+  url = NULL,
+  key = NULL,
+  user = NULL,
+  ...
+)
 }
 \arguments{
 \item{url}{Base url for a Discourse installation. See 

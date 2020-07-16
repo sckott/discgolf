@@ -4,10 +4,23 @@
 \alias{dg_search}
 \title{Search}
 \usage{
-dg_search(query = NULL, order = NULL, status = NULL,
-  category = NULL, username = NULL, group = NULL, badge = NULL,
-  in_ = NULL, posts_count = NULL, min_age = NULL, max_age = NULL,
-  url = NULL, key = NULL, user = NULL, ...)
+dg_search(
+  query = NULL,
+  order = NULL,
+  status = NULL,
+  category = NULL,
+  username = NULL,
+  group = NULL,
+  badge = NULL,
+  in_ = NULL,
+  posts_count = NULL,
+  min_age = NULL,
+  max_age = NULL,
+  url = NULL,
+  key = NULL,
+  user = NULL,
+  ...
+)
 }
 \arguments{
 \item{query}{(character) Query terms. Required.}
