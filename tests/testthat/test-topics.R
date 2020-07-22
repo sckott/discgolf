@@ -9,7 +9,7 @@ test_that("fails well with no input", {
 test_that("fails well with non-existent page", {
 	skip_on_cran()
 
-  expect_error(topic("asfafsfadfasdfd"), "404")
+  expect_error(topic("asfafsfadfasdfd"), class = "http_404")
 })
 
 test_that("curl options work", {
