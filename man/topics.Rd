@@ -11,7 +11,7 @@
 \alias{topic_rename}
 \title{Work with topics}
 \usage{
-topics_latest(url = NULL, key = NULL, user = NULL, page = NULL, ...)
+topics_latest(url = NULL, key = NULL, user = NULL, page = 1, ...)
 
 topics_new(url = NULL, key = NULL, user = NULL, ...)
 
@@ -44,7 +44,7 @@ topic_rename(id, title, url = NULL, key = NULL, user = NULL, ...)
 \code{\link{disc_setup}}}
 
 \item{page}{(integer) a page number for pagination. records per page
-is fixed at 30 (that is: up to 30)}
+is fixed at 30 (that is: up to 30). default: 1}
 
 \item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
 

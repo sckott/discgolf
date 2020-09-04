@@ -9,7 +9,7 @@
 #' which is an integer: 1 = Full, 2 = Create Post, 3 = Read Only. optional
 #' @param parent_category x. optional
 #' @param page (integer) a page number for pagination. records per page
-#' is fixed at 30 (that is: up to 30)
+#' is fixed at 30 (that is: up to 30). default: 1
 #' @template args
 #' @details Apprently there's no ability to delete categories via the API.
 #' @examples \dontrun{
@@ -22,6 +22,8 @@
 #'
 #' # latest topics for a category
 #' category_latest_topics("packages")
+#' out <- category_latest_topics(category="usecases", page = NULL)
+#' out
 #'
 #' # top topics for a category
 #' category_top_topics("packages")
@@ -40,7 +42,7 @@ categories <- function(url = NULL, key = NULL, user = NULL, ...) {
 #' @export
 #' @rdname categories
 category <- function(category, url = NULL, key = NULL, user = NULL,
-  page = NULL, ...) {
+  page = 1, ...) {
 
   args <- dc(list(api_key = check_key(key), api_username = check_user(user),
     page = page))
@@ -49,15 +51,23 @@ category <- function(category, url = NULL, key = NULL, user = NULL,
 
 #' @export
 #' @rdname categories
-category_latest_topics <- function(category, url = NULL, key = NULL, user = NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_GET(check_url(url), sprintf("c/%s/l/latest.json", category), args, ...)
+category_latest_topics <- function(category, url = NULL, key = NULL,
+  user = NULL, page = 1, ...) {
+
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
+    page = page))
+  path <- sprintf("c/%s/l/latest.json", category)
+  if (is.null(page)) return(disc_paginate(check_url(url), path, args, ...))
+  disc_GET(check_url(url), path, args, ...)
 }
 
 #' @export
 #' @rdname categories
-category_top_topics <- function(category, url = NULL, key = NULL, user = NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+category_top_topics <- function(category, url = NULL, key = NULL, user = NULL,
+  page = 1, ...) {
+
+  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
+    page = page))
   disc_GET(check_url(url), sprintf("c/%s/l/top.json", category), args, ...)
 }
 

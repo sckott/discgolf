@@ -81,3 +81,21 @@ err_handle <- function(y) {
     }
   }
 }
+
+disc_paginate <- function(url, endpt, args = list(), ...) {
+  out <- list()
+  not_done <- TRUE
+  i <- 0
+  while (not_done) {
+    i <- i + 1
+    tmp <- disc_GET(url, endpt, args, ...)
+    mtu <- tmp$topic_list$more_topics_url
+    if (is.null(mtu)) not_done <- FALSE
+    if (!is.null(mtu)) {
+      z <- crul::url_parse(mtu)
+      args$page <- z$parameter$page
+    }
+    out[[i]] <- tmp
+  }
+  return(out)  
+}

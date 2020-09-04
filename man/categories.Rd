@@ -11,11 +11,25 @@
 \usage{
 categories(url = NULL, key = NULL, user = NULL, ...)
 
-category(category, url = NULL, key = NULL, user = NULL, page = NULL, ...)
+category(category, url = NULL, key = NULL, user = NULL, page = 1, ...)
 
-category_latest_topics(category, url = NULL, key = NULL, user = NULL, ...)
+category_latest_topics(
+  category,
+  url = NULL,
+  key = NULL,
+  user = NULL,
+  page = 1,
+  ...
+)
 
-category_top_topics(category, url = NULL, key = NULL, user = NULL, ...)
+category_top_topics(
+  category,
+  url = NULL,
+  key = NULL,
+  user = NULL,
+  page = 1,
+  ...
+)
 
 category_new_topics(category, url = NULL, key = NULL, user = NULL, ...)
 
@@ -47,7 +61,7 @@ category_create(
 \item{category}{Category name. required}
 
 \item{page}{(integer) a page number for pagination. records per page
-is fixed at 30 (that is: up to 30)}
+is fixed at 30 (that is: up to 30). default: 1}
 
 \item{color}{A color by name or hex string. optional}
 
@@ -77,6 +91,8 @@ category("packages")
 
 # latest topics for a category
 category_latest_topics("packages")
+out <- category_latest_topics(category="usecases", page = NULL)
+out
 
 # top topics for a category
 category_top_topics("packages")

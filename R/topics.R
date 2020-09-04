@@ -6,7 +6,7 @@
 #' @param text Raw text, can include markdown and will be rendered.
 #' @param category Category to apply to topic, if any, Default: none
 #' @param page (integer) a page number for pagination. records per page
-#' is fixed at 30 (that is: up to 30)
+#' is fixed at 30 (that is: up to 30). default: 1
 #' @template args
 #' @examples \dontrun{
 #' topics_latest()
@@ -62,7 +62,7 @@
 
 #' @export
 #' @rdname topics
-topics_latest <- function(url = NULL, key = NULL, user = NULL, page = NULL,
+topics_latest <- function(url = NULL, key = NULL, user = NULL, page = 1,
   ...) {
 
   args <- dc(list(api_key = check_key(key),
