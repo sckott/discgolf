@@ -34,59 +34,46 @@
 #' # create a category
 #' category_create("stuff3", "F7941D", "FFFFFF", "My new category")
 #' }
-categories <- function(url = NULL, key = NULL, user = NULL, ...) {
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_GET(check_url(url), "categories.json", args, ...)
+categories <- function(...) {
+  disc_GET("categories.json", ...)
 }
 
 #' @export
 #' @rdname categories
-category <- function(category, url = NULL, key = NULL, user = NULL,
-  page = 1, ...) {
-
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
-    page = page))
-  disc_GET(check_url(url), sprintf("c/%s.json", category), args, ...)
+category <- function(category, page = 1, ...) {
+  args <- dc(list(page = page))
+  disc_GET(sprintf("c/%s.json", category), args, ...)
 }
 
 #' @export
 #' @rdname categories
-category_latest_topics <- function(category, url = NULL, key = NULL,
-  user = NULL, page = 1, ...) {
-
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
-    page = page))
+category_latest_topics <- function(category, page = 1, ...) {
+  args <- dc(list(page = page))
   path <- sprintf("c/%s/l/latest.json", category)
-  if (is.null(page)) return(disc_paginate(check_url(url), path, args, ...))
-  disc_GET(check_url(url), path, args, ...)
+  if (is.null(page)) return(disc_paginate(path, args, ...))
+  disc_GET(path, args, ...)
 }
 
 #' @export
 #' @rdname categories
-category_top_topics <- function(category, url = NULL, key = NULL, user = NULL,
-  page = 1, ...) {
-
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
-    page = page))
-  disc_GET(check_url(url), sprintf("c/%s/l/top.json", category), args, ...)
+category_top_topics <- function(category,   page = 1, ...) {
+  args <- dc(list(page = page))
+  disc_GET(sprintf("c/%s/l/top.json", category), args, ...)
 }
 
 #' @export
 #' @rdname categories
-category_new_topics <- function(category, url = NULL, key = NULL, user = NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_GET(check_url(url), sprintf("c/%s/l/new.json", category), args, ...)
+category_new_topics <- function(category, ...) {
+  disc_GET(sprintf("c/%s/l/new.json", category), ...)
 }
 
 #' @export
 #' @rdname categories
 category_create <- function(category, color, text_color, description = NULL,
-                            permissions = NULL, parent_category = NULL,
-                            url = NULL, key = NULL, user = NULL, ...){
+  permissions = NULL, parent_category = NULL, ...) {
 
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
   body <- dc(list(name = category, color = color, text_color = text_color,
                   description = description, permissions = permissions,
                   parent_category_id = parent_category))
-  disc_POST(check_url(url), "categories", args, body, ...)
+  disc_POST("categories", body = body, ...)
 }

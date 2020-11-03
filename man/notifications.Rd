@@ -4,19 +4,10 @@
 \alias{notifications}
 \title{Notifications data}
 \usage{
-notifications(url = NULL, key = NULL, user = NULL, ...)
+notifications(...)
 }
 \arguments{
-\item{url}{Base url for a Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{key}{Your api key on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{user}{Your user name on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
+\item{...}{Named parameters passed on to \link[crul:verb-GET]{crul::verb-GET}}
 }
 \description{
 Notifications data

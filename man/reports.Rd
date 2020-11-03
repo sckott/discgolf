@@ -10,8 +10,6 @@ reports_page_views(
   end_date,
   category_id = NULL,
   group_id = NULL,
-  url = NULL,
-  key = NULL,
   ...
 )
 }
@@ -22,13 +20,7 @@ reports_page_views(
 
 \item{group_id}{a group id}
 
-\item{url}{Base url for a Discourse installation. See 
-[disc_setup]}
-
-\item{key}{Your api key on the Discourse installation. See 
-[disc_setup]}
-
-\item{...}{Named parameters passed on to [crul::verb-GET]}
+\item{...}{Named parameters passed on to \link[crul:verb-GET]{crul::verb-GET}}
 }
 \description{
 Reports

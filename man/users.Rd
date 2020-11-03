@@ -11,47 +11,22 @@
 \alias{user_update_username}
 \title{Work with users}
 \usage{
-user(username, url = NULL, key = NULL, user = NULL, ...)
+user(username, ...)
 
-users_list(type, url = NULL, key = NULL, user = NULL, page = NULL, ...)
+users_list(type, page = NULL, ...)
 
-user_create(
-  name,
-  email,
-  username,
-  password,
-  url = NULL,
-  key = NULL,
-  user = NULL,
-  ...
-)
+user_create(name, email, username, password, ...)
 
-user_activate(user_id, url = NULL, key = NULL, user = NULL, ...)
+user_activate(user_id, ...)
 
-user_delete(user_id, url = NULL, key = NULL, user = NULL, ...)
+user_delete(user_id, ...)
 
-user_update_email(username, email, url = NULL, key = NULL, user = NULL, ...)
+user_update_email(username, email, ...)
 
-user_update_username(
-  username,
-  new_username,
-  url = NULL,
-  key = NULL,
-  user = NULL,
-  ...
-)
+user_update_username(username, new_username, ...)
 }
 \arguments{
 \item{username}{A user name}
-
-\item{url}{Base url for a Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{key}{Your api key on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{user}{Your user name on the Discourse installation. See 
-\code{\link{disc_setup}}}
 
 \item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
 

@@ -8,7 +8,7 @@ test_that("fails well with no input", {
 
   expect_is(bb, "list")
   expect_is(bb$name, "character")
-  expect_is(bb$actions_summary, "list")
+  expect_is(bb$actions_summary, "data.frame")
   expect_equal(bb$username, "bw4sz")
 
   # expect_is(cc, "list")

@@ -28,16 +28,14 @@
 #' # create a badge
 #' (res <- badge_create(name = "funnestbadge", badge_type_id = 3))
 #' }
-badges <- function(url = NULL, key = NULL, user = NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_GET(check_url(url), "admin/badges.json", args, ...)
+badges <- function(...) {
+  disc_GET("admin/badges.json", ...)
 }
 
 #' @export
 #' @rdname badges
-badges_user <- function(username, url = NULL, key = NULL, user = NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_GET(check_url(url), sprintf("users/%s/activity/badges.json", username), args, ...)
+badges_user <- function(username, ...) {
+  disc_GET(sprintf("users/%s/activity/badges.json", username), ...)
 }
 
 #' @export
@@ -46,16 +44,15 @@ badge_create <- function(name, badge_type_id, description = NULL,
   allow_title = NULL, multiple_grant = NULL, icon = NULL, listable = NULL,
   target_posts = NULL, enabled = NULL, auto_revoke = NULL,
   badge_grouping_id = NULL, show_posts = NULL, image = NULL,
-  long_description = NULL, url = NULL, key = NULL, user = NULL, ...) {
+  long_description = NULL, ...) {
 
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
   body <- dc(list(name = name, badge_type_id = badge_type_id,
-                  description = description, allow_title = allow_title,
-                  multiple_grant = multiple_grant, icon = icon,
-                  listable = listable, target_posts = target_posts,
-                  enabled = enabled, auto_revoke = auto_revoke,
-                  badge_grouping_id = badge_grouping_id,
-                  show_posts = show_posts, image = image,
-                  long_description = long_description))
-  disc_POST(check_url(url), "admin/badges.json", args, body, ...)
+    description = description, allow_title = allow_title,
+    multiple_grant = multiple_grant, icon = icon,
+    listable = listable, target_posts = target_posts,
+    enabled = enabled, auto_revoke = auto_revoke,
+    badge_grouping_id = badge_grouping_id,
+    show_posts = show_posts, image = image,
+    long_description = long_description))
+  disc_POST("admin/badges.json", body = body, ...)
 }

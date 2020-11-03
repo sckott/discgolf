@@ -7,35 +7,37 @@
 #' they are more general to any programming language, and you can easily
 #' set secure env vars on a server or e.g., if you're doing continuous
 #' integration on Travis-CI (or elsewhere).
+#' 
+#' You used to be able to pass user name and api key via function 
+#' parameters, but that option has been removed to reduce likelihood of a
+#' user accidentally including either of those in a public website.
 #'
 #' @section URL:
-#' The base URL for the Discourse instance, e.g., \code{https://meta.discourse.org}
+#' The base URL for the Discourse instance, e.g., `https://meta.discourse.org`
 #'
-#' Use:
-#' \itemize{
-#'  \item Env var name: \code{DISCOURSE_URL}
-#'  \item R option name: \code{discourse_url}
-#' }
+#' Use one of:
+#'
+#' - Env var name: `DISCOURSE_URL`
+#' - R option name: `discourse_url`
 #'
 #' @section Username:
 #' The user name you have registered on the Discourse instance you want
 #' to use.
 #'
-#' Use:
-#' \itemize{
-#'  \item Env var name: \code{DISCOURSE_USERNAME}
-#'  \item R option name: \code{discourse_username}
-#' }
+#' Use one of:
+#' 
+#' - Env var name: `DISCOURSE_USERNAME`
+#' - R option name: `discourse_username`
 #'
 #' @section API key:
 #' The API key on the Discourse instance you want to use. This is not your
 #' password you used to login to the instance. If you're the admin, you can get
-#' an API key by going the dashboard at \code{base_url/admin}, then the API tab
-#' \code{base_url/admin/api}, then generate a key, or copy the one already there.
+#' an API key by going the dashboard at `base_url/admin`, then the API tab
+#' `base_url/admin/api`, then generate a key, or copy the one already there.
 #'
-#' Use:
-#' \itemize{
-#'  \item Env var name: \code{DISCOURSE_API_KEY}
-#'  \item R option name: \code{discourse_api_key}
-#' }
+#' Use one of:
+#'
+#' - Env var name: `DISCOURSE_API_KEY`
+#' - R option name: `discourse_api_key`
+#'
 NULL

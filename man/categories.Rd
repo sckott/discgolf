@@ -9,29 +9,15 @@
 \alias{category_create}
 \title{Work with categories}
 \usage{
-categories(url = NULL, key = NULL, user = NULL, ...)
+categories(...)
 
-category(category, url = NULL, key = NULL, user = NULL, page = 1, ...)
+category(category, page = 1, ...)
 
-category_latest_topics(
-  category,
-  url = NULL,
-  key = NULL,
-  user = NULL,
-  page = 1,
-  ...
-)
+category_latest_topics(category, page = 1, ...)
 
-category_top_topics(
-  category,
-  url = NULL,
-  key = NULL,
-  user = NULL,
-  page = 1,
-  ...
-)
+category_top_topics(category, page = 1, ...)
 
-category_new_topics(category, url = NULL, key = NULL, user = NULL, ...)
+category_new_topics(category, ...)
 
 category_create(
   category,
@@ -40,22 +26,10 @@ category_create(
   description = NULL,
   permissions = NULL,
   parent_category = NULL,
-  url = NULL,
-  key = NULL,
-  user = NULL,
   ...
 )
 }
 \arguments{
-\item{url}{Base url for a Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{key}{Your api key on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{user}{Your user name on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
 \item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
 
 \item{category}{Category name. required}

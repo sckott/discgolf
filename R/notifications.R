@@ -1,10 +1,8 @@
 #' Notifications data
-#'
-#' @template args
+#' 
+#' @export
+#' @param ... Named parameters passed on to [crul::verb-GET]
 #' @examples \dontrun{
 #' notifications()
 #' }
-notifications <- function(url = NULL, key = NULL, user = NULL, ...) {
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_GET(check_url(url), "notifications.json", args, ...)
-}
+notifications <- function(...) disc_GET("notifications.json", ...)

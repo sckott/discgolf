@@ -23,15 +23,14 @@
 #' }
 dg_search <- function(query = NULL, order = NULL, status = NULL, category = NULL,
   username = NULL, group = NULL, badge = NULL, in_ = NULL, posts_count = NULL,
-  min_age = NULL, max_age = NULL, url = NULL, key = NULL, user = NULL, ...) {
+  min_age = NULL, max_age = NULL, ...) {
 
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
-                  term = query))
+  args <- dc(list(term = query))
   other_args <- dc(list(order = order, status = status, category = category,
                         user = username, group = group, badge = badge, `in` = in_,
                         posts_count = posts_count, min_age = min_age, max_age))
   oa <- paste0(paste(names(other_args), unlist(unname(other_args)), sep = ":"),
                collapse = "+")
   args$term <- paste0(args$term, "+", oa)
-  disc_GET(check_url(url), "search/query", args, ...)
+  disc_GET("search/query", args, ...)
 }

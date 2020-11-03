@@ -7,24 +7,15 @@
 \alias{group_delete}
 \title{Work with groups}
 \usage{
-groups(url = NULL, key = NULL, user = NULL, ...)
+groups(...)
 
-group_members(name, url = NULL, key = NULL, user = NULL, ...)
+group_members(name, ...)
 
-group_create(name, url = NULL, key = NULL, user = NULL, ...)
+group_create(name, ...)
 
-group_delete(id, url = NULL, key = NULL, user = NULL, ...)
+group_delete(id, ...)
 }
 \arguments{
-\item{url}{Base url for a Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{key}{Your api key on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{user}{Your user name on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
 \item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
 
 \item{name}{(character) A group name. required}

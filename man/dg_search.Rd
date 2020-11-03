@@ -16,9 +16,6 @@ dg_search(
   posts_count = NULL,
   min_age = NULL,
   max_age = NULL,
-  url = NULL,
-  key = NULL,
-  user = NULL,
   ...
 )
 }
@@ -46,15 +43,6 @@ bookmarks, first}
 \item{min_age}{(integer) Minimum age}
 
 \item{max_age}{(integer) Maximum age}
-
-\item{url}{Base url for a Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{key}{Your api key on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{user}{Your user name on the Discourse installation. See 
-\code{\link{disc_setup}}}
 
 \item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
 }

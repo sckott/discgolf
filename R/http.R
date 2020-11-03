@@ -1,34 +1,38 @@
-disc_verb <- function(verb, url, endpt, args = list(), body = list(), ...) {
-  cli <- crul::HttpClient$new(url = as.url(url, endpt),
-                              headers = dg_head(), opts = list(...))
+disc_verb <- function(verb, endpt, args = list(), body = list(), ...) {
+  headers_auth <- list('Api-Key' = check_key(), 'Api-Username' = check_user())
+  cli <- crul::HttpClient$new(
+    url = as.url(check_url(), endpt),
+    headers = c(dg_head(), headers_auth),
+    opts = list(...)
+  )
   res <- switch(verb,
-                GET = cli$get(query = args),
-                POST = cli$post(query = args, body = body),
-                PUT = cli$put(query = args, body = body),
-                DELETE = cli$delete(query = args)
+    GET = cli$get(query = args),
+    POST = cli$post(query = args, body = body),
+    PUT = cli$put(query = args, body = body),
+    DELETE = cli$delete(query = args)
   )
   res$raise_for_status()
   check_res(res)
   return(res)
 }
 
-disc_GET <- function(url, endpt, args = list(), ...){
-  x <- disc_verb("GET", url, endpt, args, ...)
+disc_GET <- function(endpt, args = list(), ...) {
+  x <- disc_verb("GET", endpt, args, ...)
   parse_json(x)
 }
 
-disc_POST <- function(url, endpt, args = list(), body = list(), ...){
-  x <- disc_verb("POST", url, endpt, args, body, ...)
+disc_POST <- function(endpt, args = list(), body = list(), ...) {
+  x <- disc_verb("POST", endpt, args, body, ...)
   parse_json(x)
 }
 
-disc_PUT <- function(url, endpt, args = list(), body = list(), ...){
-  x <- disc_verb("PUT", url, endpt, args, body, ...)
+disc_PUT <- function(endpt, args = list(), body = list(), ...) {
+  x <- disc_verb("PUT", endpt, args, body, ...)
   parse_log(x)
 }
 
-disc_DELETE <- function(url, endpt, args = list(), ...){
-  x <- disc_verb("DELETE", url, endpt, args, ...)
+disc_DELETE <- function(endpt, args = list(), ...) {
+  x <- disc_verb("DELETE", endpt, args, ...)
   parse_log(x)
 }
 
@@ -82,13 +86,13 @@ err_handle <- function(y) {
   }
 }
 
-disc_paginate <- function(url, endpt, args = list(), ...) {
+disc_paginate <- function(endpt, args = list(), ...) {
   out <- list()
   not_done <- TRUE
   i <- 0
   while (not_done) {
     i <- i + 1
-    tmp <- disc_GET(url, endpt, args, ...)
+    tmp <- disc_GET(endpt, args, ...)
     mtu <- tmp$topic_list$more_topics_url
     if (is.null(mtu)) not_done <- FALSE
     if (!is.null(mtu)) {

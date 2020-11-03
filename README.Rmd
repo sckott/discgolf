@@ -41,7 +41,7 @@ library("discgolf")
 
 ## Authentication
 
-The Discourse API is based on using a specific installation of Discourse, which requires your username and an API key for that installation. Get those, and you can pass them in to each function call, or set as option variables in `.Rprofile` (use `discourse_api_key` and `discourse_username`) or environment variables in `.Renviron` (use `DISCOURSE_API_KEY` and `DISCOURSE_USERNAME`).
+The Discourse API is based on using a specific installation of Discourse, which requires your username and an API key for that installation. Get those, set as option variables in `.Rprofile` (use `discourse_api_key` and `discourse_username`) or environment variables in `.Renviron` (use `DISCOURSE_API_KEY` and `DISCOURSE_USERNAME`) or similar file (`.bashrc`, `.zshrc`, etc.).
 
 ## Get latest topics
 

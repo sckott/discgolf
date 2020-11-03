@@ -7,23 +7,14 @@
 \alias{post_wikify}
 \title{Work with posts}
 \usage{
-post_get(post_id, url = NULL, key = NULL, user = NULL, ...)
+post_get(post_id, ...)
 
-post_create(topic_id, text, url = NULL, key = NULL, user = NULL, ...)
+post_create(topic_id, text, ...)
 
-post_wikify(post_id, url = NULL, key = NULL, user = NULL, ...)
+post_wikify(post_id, ...)
 }
 \arguments{
 \item{post_id}{A post id}
-
-\item{url}{Base url for a Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{key}{Your api key on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{user}{Your user name on the Discourse installation. See 
-\code{\link{disc_setup}}}
 
 \item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
 

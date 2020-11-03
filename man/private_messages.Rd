@@ -4,21 +4,12 @@
 \alias{private_messages}
 \title{Private messages}
 \usage{
-private_messages(username, url = NULL, key = NULL, user = NULL, ...)
+private_messages(username, ...)
 }
 \arguments{
 \item{username}{A username. required.}
 
-\item{url}{Base url for a Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{key}{Your api key on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{user}{Your user name on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
+\item{...}{Named parameters passed on to \link[crul:verb-GET]{crul::verb-GET}}
 }
 \description{
 Private messages

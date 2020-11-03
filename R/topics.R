@@ -62,56 +62,45 @@
 
 #' @export
 #' @rdname topics
-topics_latest <- function(url = NULL, key = NULL, user = NULL, page = 1,
-  ...) {
-
-  args <- dc(list(api_key = check_key(key),
-    api_username = check_user(user), page = page))
-  disc_GET(check_url(url), "latest.json", args, ...)
+topics_latest <- function(page = 1,...) {
+  args <- dc(list(page = page))
+  disc_GET("latest.json", args, ...)
 }
 
 #' @export
 #' @rdname topics
-topics_new <- function(url = NULL, key = NULL, user = NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_GET(check_url(url), "new.json", args, ...)
+topics_new <- function(...) {
+  disc_GET("new.json", args, ...)
 }
 
 #' @export
 #' @rdname topics
-topics_by <- function(id, url = NULL, key = NULL, user = NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_GET(check_url(url), sprintf("topics/created-by/%s.json", id), args, ...)
+topics_by <- function(id, ...){
+  disc_GET(sprintf("topics/created-by/%s.json", id), ...)
 }
 
 #' @export
 #' @rdname topics
-topic <- function(id, url = NULL, key = NULL, user = NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_GET(check_url(url), sprintf("t/%s.json", id), args, ...)
+topic <- function(id, ...) {
+  disc_GET(sprintf("t/%s.json", id), ...)
 }
 
 #' @export
 #' @rdname topics
-topic_create <- function(title, text, category = NULL, url = NULL,
-                         key = NULL, user = NULL, ...){
-
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+topic_create <- function(title, text, category = NULL, ...) {
   body <- dc(list(title = title, raw = text, category = category))
-  disc_POST(check_url(url), "posts", args, body, ...)
+  disc_POST("posts", body = body, ...)
 }
 
 #' @export
 #' @rdname topics
-topic_delete <- function(id, url = NULL, key = NULL, user = NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_DELETE(check_url(url), sprintf("t/%s.json", id), args, ...)
+topic_delete <- function(id, ...) {
+  disc_DELETE(sprintf("t/%s.json", id), ...)
 }
 
 #' @export
 #' @rdname topics
-topic_rename <- function(id, title, url = NULL, key = NULL, user = NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
-                  topic_id = id))
-  disc_PUT(check_url(url), sprintf("t/%s.json", id), args, ...)
+topic_rename <- function(id, title, ...) {
+  args <- dc(list(topic_id = id))
+  disc_PUT(sprintf("t/%s.json", id), args, ...)
 }

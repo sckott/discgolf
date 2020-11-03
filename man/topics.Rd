@@ -11,38 +11,21 @@
 \alias{topic_rename}
 \title{Work with topics}
 \usage{
-topics_latest(url = NULL, key = NULL, user = NULL, page = 1, ...)
+topics_latest(page = 1, ...)
 
-topics_new(url = NULL, key = NULL, user = NULL, ...)
+topics_new(...)
 
-topics_by(id, url = NULL, key = NULL, user = NULL, ...)
+topics_by(id, ...)
 
-topic(id, url = NULL, key = NULL, user = NULL, ...)
+topic(id, ...)
 
-topic_create(
-  title,
-  text,
-  category = NULL,
-  url = NULL,
-  key = NULL,
-  user = NULL,
-  ...
-)
+topic_create(title, text, category = NULL, ...)
 
-topic_delete(id, url = NULL, key = NULL, user = NULL, ...)
+topic_delete(id, ...)
 
-topic_rename(id, title, url = NULL, key = NULL, user = NULL, ...)
+topic_rename(id, title, ...)
 }
 \arguments{
-\item{url}{Base url for a Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{key}{Your api key on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{user}{Your user name on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
 \item{page}{(integer) a page number for pagination. records per page
 is fixed at 30 (that is: up to 30). default: 1}
 

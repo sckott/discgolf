@@ -6,9 +6,9 @@
 \alias{badge_create}
 \title{Work with badges}
 \usage{
-badges(url = NULL, key = NULL, user = NULL, ...)
+badges(...)
 
-badges_user(username, url = NULL, key = NULL, user = NULL, ...)
+badges_user(username, ...)
 
 badge_create(
   name,
@@ -25,22 +25,10 @@ badge_create(
   show_posts = NULL,
   image = NULL,
   long_description = NULL,
-  url = NULL,
-  key = NULL,
-  user = NULL,
   ...
 )
 }
 \arguments{
-\item{url}{Base url for a Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{key}{Your api key on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
-\item{user}{Your user name on the Discourse installation. See 
-\code{\link{disc_setup}}}
-
 \item{...}{Named parameters passed on to \code{\link[crul]{HttpClient}}}
 
 \item{username}{A current user name. required}

@@ -30,23 +30,20 @@
 
 #' @export
 #' @rdname posts
-post_get <- function(post_id, url = NULL, key = NULL, user = NULL, ...) {
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_GET(check_url(url), sprintf("posts/%s.json", post_id), args, ...)
+post_get <- function(post_id, ...) {
+  disc_GET(sprintf("posts/%s.json", post_id), ...)
 }
 
 #' @export
 #' @rdname posts
-post_create <- function(topic_id, text, url=NULL, key=NULL, user=NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+post_create <- function(topic_id, text, ...) {
   body <- dc(list(topic_id = topic_id, raw = text))
-  disc_POST(check_url(url), "posts", args, body, ...)
+  disc_POST("posts", body = body, ...)
 }
 
 #' @export
 #' @rdname posts
-post_wikify <- function(post_id, url=NULL, key=NULL, user=NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user),
-                  wiki = "true"))
-  disc_PUT(check_url(url), sprintf("posts/%s/wiki", post_id), args, ...)
+post_wikify <- function(post_id, ...) {
+  args <- dc(list(wiki = "true"))
+  disc_PUT(sprintf("posts/%s/wiki", post_id), args, ...)
 }

@@ -19,29 +19,25 @@
 #' # delete a group
 #' group_delete(res$basic_group$id)
 #' }
-groups <- function(url = NULL, key = NULL, user = NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_GET(check_url(url), "admin/groups.json", args, ...)
+groups <- function(...) {
+  disc_GET("admin/groups.json", args, ...)
 }
 
 #' @export
 #' @rdname groups
-group_members <- function(name, url = NULL, key = NULL, user = NULL, ...){
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_GET(check_url(url), sprintf("groups/%s/members.json", name), args, ...)
+group_members <- function(name, ...) {
+  disc_GET(sprintf("groups/%s/members.json", name), ...)
 }
 
 #' @export
 #' @rdname groups
-group_create <- function(name, url = NULL, key = NULL, user = NULL, ...) {
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
+group_create <- function(name, ...) {
   body <- dc(list(`group[name]` = name))
-  disc_POST(check_url(url), "admin/groups", args, body, ...)
+  disc_POST("admin/groups", body = body, ...)
 }
 
 #' @export
 #' @rdname groups
-group_delete <- function(id, url = NULL, key = NULL, user = NULL, ...) {
-  args <- dc(list(api_key = check_key(key), api_username = check_user(user)))
-  disc_DELETE(check_url(url), sprintf("admin/groups/%s.json", id), args, ...)
+group_delete <- function(id, ...) {
+  disc_DELETE(sprintf("admin/groups/%s.json", id), ...)
 }
