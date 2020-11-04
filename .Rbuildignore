@@ -8,3 +8,4 @@ cran-comments.md
 ^docker_notes\.md$
 ^Makefile$
 ^LICENSE\.md$
+.github
