@@ -9,9 +9,11 @@ discgolf
 [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/discgolf?color=FAB657)](https://github.com/metacran/cranlogs.app)
 [![cran version](https://www.r-pkg.org/badges/version/discgolf)](https://cran.r-project.org/package=discgolf)
 
-`discgolf` is an R client for the Discourse API, inspired by the Ruby gem [discourse_api](https://github.com/discourse/discourse_api)
+`discgolf` is an R client for the Discourse API
 
-Discourse API docs: <https://docs.discourse.org>
+Discourse API docs: https://docs.discourse.org
+
+discgolf package docs: https://sckott.github.io/discgolf/
 
 ## Installation
 
