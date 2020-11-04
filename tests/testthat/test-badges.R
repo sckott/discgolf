@@ -51,7 +51,7 @@ test_that("badge_creatse fails well with no input", {
 test_that("fails well with non-existent user", {
   skip_on_cran()
 
-  expect_error(badges_user("asfafsfadfasdfd"), class = "http_404")
+  expect_error(badges_user("asfafsfadfasdfd"))
 })
 
 test_that("curl options work", {

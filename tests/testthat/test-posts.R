@@ -26,7 +26,7 @@ test_that("fails well with no input", {
 test_that("fails well with non-existent page", {
   skip_on_cran()
 
-  expect_error(post_get("asfafsfadfasdfd"), class = "http_404")
+  expect_error(post_get("asfafsfadfasdfd"))
 })
 
 test_that("curl options work", {
