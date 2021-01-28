@@ -11,16 +11,16 @@ knitr::opts_chunk$set(
 ```
 
 [![cran checks](https://cranchecks.info/badges/worst/discgolf)](https://cranchecks.info/pkgs/discgolf)
-[![Build Status](https://travis-ci.org/sckott/discgolf.svg)](https://travis-ci.org/sckott/discgolf)
+[![R-check](https://github.com/sckott/discgolf/workflows/R-check/badge.svg)](https://github.com/sckott/discgolf/actions?query=workflow%3AR-check)
 [![codecov.io](https://codecov.io/github/sckott/discgolf/coverage.svg?branch=master)](https://codecov.io/github/sckott/discgolf?branch=master)
-[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/discgolf?color=FAB657)](https://github.com/metacran/cranlogs.app)
+[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/discgolf?color=FAB657)](https://github.com/r-hub/cranlogs.app)
 [![cran version](https://www.r-pkg.org/badges/version/discgolf)](https://cran.r-project.org/package=discgolf)
 
 `discgolf` is an R client for the Discourse API
 
-Discourse API docs: https://docs.discourse.org
+Discourse API docs: <https://docs.discourse.org/>
 
-discgolf package docs: https://sckott.github.io/discgolf/
+discgolf package docs: <https://sckott.github.io/discgolf/>
 
 ## Installation
 
