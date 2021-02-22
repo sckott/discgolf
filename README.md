@@ -1,13 +1,16 @@
-discgolf
-========
 
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# discgolf
 
-[![cran checks](https://cranchecks.info/badges/worst/discgolf)](https://cranchecks.info/pkgs/discgolf)
+[![cran
+checks](https://cranchecks.info/badges/worst/discgolf)](https://cranchecks.info/pkgs/discgolf)
 [![R-check](https://github.com/sckott/discgolf/workflows/R-check/badge.svg)](https://github.com/sckott/discgolf/actions?query=workflow%3AR-check)
 [![codecov.io](https://codecov.io/github/sckott/discgolf/coverage.svg?branch=master)](https://codecov.io/github/sckott/discgolf?branch=master)
-[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/discgolf?color=FAB657)](https://github.com/r-hub/cranlogs.app)
-[![cran version](https://www.r-pkg.org/badges/version/discgolf)](https://cran.r-project.org/package=discgolf)
+[![rstudio mirror
+downloads](https://cranlogs.r-pkg.org/badges/discgolf?color=FAB657)](https://github.com/r-hub/cranlogs.app)
+[![cran
+version](https://www.r-pkg.org/badges/version/discgolf)](https://cran.r-project.org/package=discgolf)
 
 `discgolf` is an R client for the Discourse API
 
@@ -19,151 +22,138 @@ discgolf package docs: <https://sckott.github.io/discgolf/>
 
 CRAN version
 
-
-```r
+``` r
 install.packages("discgolf")
 ```
 
 Development version
 
-
-```r
+``` r
 install.packages("remotes")
 remotes::install_github("sckott/discgolf")
 ```
 
-
-```r
+``` r
 library("discgolf")
 ```
 
 ## Authentication
 
-The Discourse API is based on using a specific installation of Discourse, which requires your username and an API key for that installation. Get those, set as option variables in `.Rprofile` (use `discourse_api_key` and `discourse_username`) or environment variables in `.Renviron` (use `DISCOURSE_API_KEY` and `DISCOURSE_USERNAME`) or similar file (`.bashrc`, `.zshrc`, etc.).
+The Discourse API is based on using a specific installation of
+Discourse, which requires the URL of the target Discourse forum, your
+username and an API key for that installation. Get those, set as option
+variables in `.Rprofile` (use `discourse_url`, `discourse_username` and
+`discourse_api_key`) or environment variables in `.Renviron` (use
+`DISCOURSE_URL`, `DISCOURSE_USERNAME` and `DISCOURSE_API_KEY`) or
+similar file (`.bashrc`, `.zshrc`, etc.).
 
 ## Get latest topics
 
-
-```r
+``` r
 topics_latest()
 ```
 
-
-```r
+``` r
 topics_latest()$topic_list$topics[,c(1:5)]
 ```
 
 ## Get new topics
 
-
-```r
+``` r
 topics_new()
 ```
 
 ## Get topics by a specific user
 
-
-```r
+``` r
 topics_by("cboettig")
 ```
 
 ## Get a single topic by id number
 
-
-```r
+``` r
 topic(8)
 ```
 
-
-```r
+``` r
 topic(8)$post_stream$posts[,c(1:5)]
 ```
 
 ## Get a post
 
-
-```r
+``` r
 post_get(90)
 ```
 
-## create post, create topic first
+## Create post, create topic first
 
-
-```r
+``` r
 topic_create("The problem with blue skies", text = "just saying and all that")
 post_create(topic_id = 13, text = "There isn't a problem!")
 ```
 
 ## Wikify a post
 
-
-```r
+``` r
 post_wikify(x$post_stream$posts$id[4])
 ```
 
 ## Search
 
-
-```r
+``` r
 dg_search(query = "poo")
 dg_search(posts_count = 1)
 dg_search(in_ = "posted")
 dg_search(status = "open")
 ```
 
-## list a user
+## List a user
 
-
-```r
+``` r
 user('sckott')
 user('cboettig')
 ```
 
-## list users
+## List users
 
-
-```r
+``` r
 users_list('staff')
 users_list('new')
 ```
 
-## create a user
+## Create a user
 
-
-```r
+``` r
 (x <- user_create("jane doe", "jane@doe.com", "jane_doe", "afafasfdasdf"))
 ```
 
-## activate a user
+## Activate a user
 
-
-```r
+``` r
 user_activate(x$user_id)
 ```
 
-## upate email address
+## Update email address
 
-
-```r
+``` r
 user_update_email('jane_doe', 'jane2@doe.com')
 ```
 
-## upate user name
+## Update user name
 
-
-```r
+``` r
 user_update_username('jane_doe', 'jane_doe2')
 ```
 
-## delete a user
+## Delete a user
 
-
-```r
+``` r
 user_delete(x$user_id)
 ```
 
 ## Meta
 
-* Please note that this project is released with a [Contributor Code of Conduct][coc]. By participating in this project you agree to abide by its terms.
-
-[coc]: https://github.com/sckott/discgolf/blob/master/CODE_OF_CONDUCT.md
+  - Please note that this project is released with a [Contributor Code
+    of
+    Conduct](https://github.com/sckott/discgolf/blob/master/CODE_OF_CONDUCT.md).
+    By participating in this project you agree to abide by its terms.
