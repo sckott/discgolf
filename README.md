@@ -1,16 +1,8 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # discgolf
 
-[![cran
-checks](https://cranchecks.info/badges/worst/discgolf)](https://cranchecks.info/pkgs/discgolf)
-[![R-check](https://github.com/sckott/discgolf/workflows/R-check/badge.svg)](https://github.com/sckott/discgolf/actions?query=workflow%3AR-check)
-[![codecov.io](https://codecov.io/github/sckott/discgolf/coverage.svg?branch=master)](https://codecov.io/github/sckott/discgolf?branch=master)
-[![rstudio mirror
-downloads](https://cranlogs.r-pkg.org/badges/discgolf?color=FAB657)](https://github.com/r-hub/cranlogs.app)
-[![cran
-version](https://www.r-pkg.org/badges/version/discgolf)](https://cran.r-project.org/package=discgolf)
+[![cran checks](https://cranchecks.info/badges/worst/discgolf)](https://cranchecks.info/pkgs/discgolf) [![R-check](https://github.com/sckott/discgolf/workflows/R-check/badge.svg)](https://github.com/sckott/discgolf/actions?query=workflow%3AR-check) [![codecov.io](https://codecov.io/github/sckott/discgolf/coverage.svg?branch=master)](https://codecov.io/github/sckott/discgolf?branch=master) [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/discgolf?color=FAB657)](https://github.com/r-hub/cranlogs.app) [![cran version](https://www.r-pkg.org/badges/version/discgolf)](https://cran.r-project.org/package=discgolf)
 
 `discgolf` is an R client for the Discourse API
 
@@ -39,13 +31,7 @@ library("discgolf")
 
 ## Authentication
 
-The Discourse API is based on using a specific installation of
-Discourse, which requires the URL of the target Discourse forum, your
-username and an API key for that installation. Get those, set as option
-variables in `.Rprofile` (use `discourse_url`, `discourse_username` and
-`discourse_api_key`) or environment variables in `.Renviron` (use
-`DISCOURSE_URL`, `DISCOURSE_USERNAME` and `DISCOURSE_API_KEY`) or
-similar file (`.bashrc`, `.zshrc`, etc.).
+The Discourse API is based on using a specific installation of Discourse, which requires the URL of the target Discourse forum, your username and an API key for that installation. Get those, set as option variables in `.Rprofile` (use `discourse_url`, `discourse_username` and `discourse_api_key`) or environment variables in `.Renviron` (use `DISCOURSE_URL`, `DISCOURSE_USERNAME` and `DISCOURSE_API_KEY`) or similar file (`.bashrc`, `.zshrc`, etc.).
 
 ## Get latest topics
 
@@ -153,7 +139,4 @@ user_delete(x$user_id)
 
 ## Meta
 
-  - Please note that this project is released with a [Contributor Code
-    of
-    Conduct](https://github.com/sckott/discgolf/blob/master/CODE_OF_CONDUCT.md).
-    By participating in this project you agree to abide by its terms.
+-   Please note that this project is released with a [Contributor Code of Conduct](https://github.com/sckott/discgolf/blob/master/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
