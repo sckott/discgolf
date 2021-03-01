@@ -34,7 +34,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">discgolf</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.8.91</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.8.93</span>
       </span>
     </div>
 
@@ -95,7 +95,7 @@
 <div id="authentication" class="section level2">
 <h2 class="hasAnchor">
 <a href="#authentication" class="anchor"></a>Authentication</h2>
-<p>The Discourse API is based on using a specific installation of Discourse, which requires your username and an API key for that installation. Get those, set as option variables in <code>.Rprofile</code> (use <code>discourse_api_key</code> and <code>discourse_username</code>) or environment variables in <code>.Renviron</code> (use <code>DISCOURSE_API_KEY</code> and <code>DISCOURSE_USERNAME</code>) or similar file (<code>.bashrc</code>, <code>.zshrc</code>, etc.).</p>
+<p>The Discourse API is based on using a specific installation of Discourse, which requires the URL of the target Discourse forum, your username and an API key for that installation. Get those, set as option variables in <code>.Rprofile</code> (use <code>discourse_url</code>, <code>discourse_username</code> and <code>discourse_api_key</code>) or environment variables in <code>.Renviron</code> (use <code>DISCOURSE_URL</code>, <code>DISCOURSE_USERNAME</code> and <code>DISCOURSE_API_KEY</code>) or similar file (<code>.bashrc</code>, <code>.zshrc</code>, etc.).</p>
 </div>
 <div id="get-latest-topics" class="section level2">
 <h2 class="hasAnchor">
@@ -133,7 +133,7 @@
 </div>
 <div id="create-post-create-topic-first" class="section level2">
 <h2 class="hasAnchor">
-<a href="#create-post-create-topic-first" class="anchor"></a>create post, create topic first</h2>
+<a href="#create-post-create-topic-first" class="anchor"></a>Create post, create topic first</h2>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/topics.html">topic_create</a></span><span class="op">(</span><span class="st">"The problem with blue skies"</span>, text <span class="op">=</span> <span class="st">"just saying and all that"</span><span class="op">)</span>
 <span class="fu"><a href="reference/posts.html">post_create</a></span><span class="op">(</span>topic_id <span class="op">=</span> <span class="fl">13</span>, text <span class="op">=</span> <span class="st">"There isn't a problem!"</span><span class="op">)</span></code></pre></div>
@@ -155,45 +155,45 @@
 </div>
 <div id="list-a-user" class="section level2">
 <h2 class="hasAnchor">
-<a href="#list-a-user" class="anchor"></a>list a user</h2>
+<a href="#list-a-user" class="anchor"></a>List a user</h2>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/users.html">user</a></span><span class="op">(</span><span class="st">'sckott'</span><span class="op">)</span>
 <span class="fu"><a href="reference/users.html">user</a></span><span class="op">(</span><span class="st">'cboettig'</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="list-users" class="section level2">
 <h2 class="hasAnchor">
-<a href="#list-users" class="anchor"></a>list users</h2>
+<a href="#list-users" class="anchor"></a>List users</h2>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/users.html">users_list</a></span><span class="op">(</span><span class="st">'staff'</span><span class="op">)</span>
 <span class="fu"><a href="reference/users.html">users_list</a></span><span class="op">(</span><span class="st">'new'</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="create-a-user" class="section level2">
 <h2 class="hasAnchor">
-<a href="#create-a-user" class="anchor"></a>create a user</h2>
+<a href="#create-a-user" class="anchor"></a>Create a user</h2>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="op">(</span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/users.html">user_create</a></span><span class="op">(</span><span class="st">"jane doe"</span>, <span class="st">"jane@doe.com"</span>, <span class="st">"jane_doe"</span>, <span class="st">"afafasfdasdf"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="activate-a-user" class="section level2">
 <h2 class="hasAnchor">
-<a href="#activate-a-user" class="anchor"></a>activate a user</h2>
+<a href="#activate-a-user" class="anchor"></a>Activate a user</h2>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/users.html">user_activate</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">user_id</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="upate-email-address" class="section level2">
+<div id="update-email-address" class="section level2">
 <h2 class="hasAnchor">
-<a href="#upate-email-address" class="anchor"></a>upate email address</h2>
+<a href="#update-email-address" class="anchor"></a>Update email address</h2>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/users.html">user_update_email</a></span><span class="op">(</span><span class="st">'jane_doe'</span>, <span class="st">'jane2@doe.com'</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="upate-user-name" class="section level2">
+<div id="update-user-name" class="section level2">
 <h2 class="hasAnchor">
-<a href="#upate-user-name" class="anchor"></a>upate user name</h2>
+<a href="#update-user-name" class="anchor"></a>Update user name</h2>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/users.html">user_update_username</a></span><span class="op">(</span><span class="st">'jane_doe'</span>, <span class="st">'jane_doe2'</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="delete-a-user" class="section level2">
 <h2 class="hasAnchor">
-<a href="#delete-a-user" class="anchor"></a>delete a user</h2>
+<a href="#delete-a-user" class="anchor"></a>Delete a user</h2>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/users.html">user_delete</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">user_id</span><span class="op">)</span></code></pre></div>
 </div>
